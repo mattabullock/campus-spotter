@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6501C961-6649-4B73-8F90-96827E07A7B4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RateItWashU</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B9F09198-BA16-41BC-8FF1-AAD91DD58CC2</key>
+		<string>ssh://github.com/Woofles/campus-spotter.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CampusSpotter/RateItWashU.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B9F09198-BA16-41BC-8FF1-AAD91DD58CC2</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/Woofles/campus-spotter.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B9F09198-BA16-41BC-8FF1-AAD91DD58CC2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B9F09198-BA16-41BC-8FF1-AAD91DD58CC2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RateItWashU</string>
+		</dict>
+	</array>
+</dict>
+</plist>
