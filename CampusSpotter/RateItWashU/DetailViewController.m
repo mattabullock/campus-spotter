@@ -1,32 +1,18 @@
 //
-//  MapViewController.m
+//  DetailViewController.m
 //  RateItWashU
 //
 //  Created by Matt Bullock on 4/8/14.
 //
 //
 
-#import "MapViewController.h"
+#import "DetailViewController.h"
 
-@interface MapViewController ()
+@interface DetailViewController ()
 
 @end
 
-@implementation MapViewController
-
-
--(IBAction)findMyLocation:(id)sender {
-//    NSLog(@"why don't you work?!?!?!?!?!?!");
-//    _mapView.delegate = self;
-    _mapView.showsUserLocation = YES;
-//    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    [mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
-//    mapView.showsUserLocation=NO;
-}
+@implementation DetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,9 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [_mapView setShowsUserLocation:YES];
-//    _mapView.delegate=self;
-
     // Do any additional setup after loading the view.
 }
 

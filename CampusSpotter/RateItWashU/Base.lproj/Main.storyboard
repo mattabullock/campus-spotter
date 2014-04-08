@@ -44,7 +44,17 @@
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7FG-oA-PQy" kind="modal" modalTransitionStyle="crossDissolve" id="UZj-nP-4hI"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RATE IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwN-ET-0GI">
+                                <rect key="frame" x="101" y="71" width="118" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                <color key="textColor" red="0.0" green="0.79161005429999998" blue="0.025472456082668654" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -76,11 +86,60 @@
             </objects>
             <point key="canvasLocation" x="-1644" y="96"/>
         </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="TSq-nc-3Yy">
+            <objects>
+                <viewController id="7FG-oA-PQy" customClass="RegistrationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dg0-QK-YRz"/>
+                        <viewControllerLayoutGuide type="bottom" id="plD-o6-Bzo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10n-FF-k4L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yN0-2i-tEe">
+                                <rect key="frame" x="62" y="105" width="196" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-O4-wnl">
+                                <rect key="frame" x="62" y="153" width="196" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQP-fm-BQe">
+                                <rect key="frame" x="62" y="191" width="196" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="register:" destination="7FG-oA-PQy" eventType="touchUpInside" id="i6k-h5-wwC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="B4x-O4-wnl" id="eYb-Cx-Ukv"/>
+                        <outlet property="username" destination="yN0-2i-tEe" id="lZ5-hx-6G5"/>
+                        <segue destination="uCb-vp-hQY" kind="modal" identifier="registertonav" modalTransitionStyle="crossDissolve" id="0Bl-WV-x9b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLr-07-vBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1917" y="1003"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5eV-MI-ORi">
             <objects>
                 <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWY-nW-W1U" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="GqN-Yo-lfV"/>
+                    <navigationItem key="navigationItem" id="GqN-Yo-lfV">
+                        <barButtonItem key="rightBarButtonItem" title="Category" id="5Pg-aD-BM4"/>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="HED-eD-TaP">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -122,6 +181,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Categories" id="lcj-qB-ib8"/>
                     <navigationItem key="navigationItem" id="L8e-1K-ZUB"/>
+                    <connections>
+                        <segue destination="6ie-U8-ZfR" kind="modal" identifier="listtodetail" id="ukv-Kb-eg7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrg-dS-NGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,11 +252,30 @@
                     <tabBarItem key="tabBarItem" title="Map" id="vHS-fO-3sQ"/>
                     <connections>
                         <outlet property="mapView" destination="KLd-1R-URk" id="J43-SI-52r"/>
+                        <segue destination="6ie-U8-ZfR" kind="modal" identifier="maptodetail" id="U5X-kr-TgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jl1-iI-ufW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-472" y="281"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kBE-nf-5Ph">
+            <objects>
+                <viewController id="6ie-U8-ZfR" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X75-hW-nWQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="e4s-Oh-4r9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3ib-bS-cqt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyz-GY-h4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="281"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -202,4 +283,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Bl-WV-x9b"/>
+        <segue reference="ukv-Kb-eg7"/>
+    </inferredMetricsTieBreakers>
 </document>

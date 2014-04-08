@@ -62,12 +62,6 @@
                 // The login failed. Check error to see why.
             }
         }];
-    
-    
-//    PFUser *user = [PFUser user];
-//    user.username = [username text];
-//    user.password = [password text];
-//    [user signUp];
 }
 
 - (void)didReceiveMemoryWarning

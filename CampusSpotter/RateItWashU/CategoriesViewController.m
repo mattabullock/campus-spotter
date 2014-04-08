@@ -23,10 +23,10 @@
     
     self.title = @"Categories";
     categories = [[NSArray alloc] initWithObjects:
-                    @"Bathrooms",
-                    @"Classrooms",
-                    @"Food",
-                    @"Study Spots", nil];
+                    @"Ibby's",
+                    @"Whispers Cafe",
+                    @"WashU Wok",
+                    @"Grizzly Grill", nil];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(print_Message)];
     

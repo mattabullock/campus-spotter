@@ -7,12 +7,15 @@
 //
 
 #import "RegistrationViewController.h"
+#import <Parse/Parse.h>
 
 @interface RegistrationViewController ()
 
 @end
 
 @implementation RegistrationViewController
+
+@synthesize username,password;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +24,14 @@
         // Custom initialization
     }
     return self;
+}
+- (IBAction)register:(id)sender {
+    PFUser *user = [PFUser user];
+    user.username = [username text];
+    user.password = [password text];
+    if([user signUp]) {
+        [self performSegueWithIdentifier:@"registertonav" sender:self];
+    }
 }
 
 - (void)viewDidLoad

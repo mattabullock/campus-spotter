@@ -36,6 +36,8 @@
 		C98B469718F3531500558EBC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B469618F3531500558EBC /* SystemConfiguration.framework */; };
 		C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469918F3578F00558EBC /* CategoriesViewController.m */; };
 		C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469E18F35C4E00558EBC /* RegistrationViewController.m */; };
+		C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A95FE218F45E9C00832180 /* DetailViewController.m */; };
+		C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A95FE518F4630E00832180 /* blue-cog-hi.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		C98B469918F3578F00558EBC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		C98B469D18F35C4E00558EBC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		C98B469E18F35C4E00558EBC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		C9A95FE118F45E9C00832180 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C9A95FE218F45E9C00832180 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C9A95FE518F4630E00832180 /* blue-cog-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-cog-hi.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +191,8 @@
 		C98B465518F3524200558EBC /* RateItWashU */ = {
 			isa = PBXGroup;
 			children = (
+				C9A95FE718F4631200832180 /* Images */,
+				C9A95FE418F45EA100832180 /* DetailView */,
 				C956BE4318F3C714008D9505 /* MapView */,
 				C956BE3F18F3BADC008D9505 /* TempView */,
 				C98B46A418F35C8C00558EBC /* CategoriesView */,
@@ -254,6 +261,23 @@
 				C98B469918F3578F00558EBC /* CategoriesViewController.m */,
 			);
 			name = CategoriesView;
+			sourceTree = "<group>";
+		};
+		C9A95FE418F45EA100832180 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95FE118F45E9C00832180 /* DetailViewController.h */,
+				C9A95FE218F45E9C00832180 /* DetailViewController.m */,
+			);
+			name = DetailView;
+			sourceTree = "<group>";
+		};
+		C9A95FE718F4631200832180 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95FE518F4630E00832180 /* blue-cog-hi.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +357,7 @@
 			files = (
 				C98B466818F3524200558EBC /* Images.xcassets in Resources */,
 				C98B465A18F3524200558EBC /* InfoPlist.strings in Resources */,
+				C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */,
 				C98B466318F3524200558EBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +380,7 @@
 				C98B466618F3524200558EBC /* ViewController.m in Sources */,
 				C98B466018F3524200558EBC /* AppDelegate.m in Sources */,
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
+				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
 				C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */,
 				C98B465C18F3524200558EBC /* main.m in Sources */,
