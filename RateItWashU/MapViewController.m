@@ -1,0 +1,66 @@
+//
+//  MapViewController.m
+//  RateItWashU
+//
+//  Created by Matt Bullock on 4/8/14.
+//
+//
+
+#import "MapViewController.h"
+
+@interface MapViewController ()
+
+@end
+
+@implementation MapViewController
+
+
+-(IBAction)findMyLocation:(id)sender {
+//    NSLog(@"why don't you work?!?!?!?!?!?!");
+//    _mapView.delegate = self;
+//    _mapView.showsUserLocation = YES;
+//    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+    
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    [mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
+    mapView.showsUserLocation=NO;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [_mapView setShowsUserLocation:YES];
+//    _mapView.delegate=self;
+
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
