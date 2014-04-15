@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "DetailTabBar.h"
 
-@interface CommentsTableView : UITableViewController
+@interface CommentsTableView : UITableViewController {
+    PFObject * item;
+}
 
 @end

@@ -13,20 +13,26 @@
 @end
 
 @implementation DetailViewController
+@synthesize item;
+@synthesize imageView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [super viewDidLoad];// Custom initialization
+    
+    DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
+    item = [parent item];
+    [self updateDisplay];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +41,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)updateDisplay {
+    [self.parentViewController.navigationItem setTitle:item[@"Title"]];
+    PFFile *userImageFile = item[@"MainPhoto"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            [imageView setImage: image];
+        }
+    }];
+}
 /*
 #pragma mark - Navigation
 

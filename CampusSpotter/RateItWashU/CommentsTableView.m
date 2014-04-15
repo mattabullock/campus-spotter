@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
+    item = [parent item];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,24 +46,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
+    
     // Return the number of rows in the section.
-    return 0;
+    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
+    [query whereKey:@"item" equalTo:item];
+    NSArray * objects = [query findObjects];
+    NSLog(@"COUNT=%d", objects.count);
+    return objects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
+    if (cell == NULL) {
+        cell = [[UITableViewCell alloc] init];
+    }
     
     return cell;
 }

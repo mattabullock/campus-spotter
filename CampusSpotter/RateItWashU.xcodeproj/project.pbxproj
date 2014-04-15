@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22426DC418FCB18700B5D873 /* Whispers-hero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22426DC318FCB18700B5D873 /* Whispers-hero.jpg */; };
+		22426DC718FCC96600B5D873 /* CommentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426DC618FCC96600B5D873 /* CommentsTableView.m */; };
+		22426DCC18FCCD4600B5D873 /* DetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22426DCB18FCCD4600B5D873 /* DetailTabBar.m */; };
 		C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4518F3C722008D9505 /* MapViewController.m */; };
 		C956BE3E18F36BE9008D9505 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C956BE3D18F36BE9008D9505 /* MapKit.framework */; };
 		C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4118F3BAF4008D9505 /* TempViewController.m */; };
@@ -51,6 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22426DC318FCB18700B5D873 /* Whispers-hero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Whispers-hero.jpg"; sourceTree = "<group>"; };
+		22426DC518FCC96600B5D873 /* CommentsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableView.h; sourceTree = "<group>"; };
+		22426DC618FCC96600B5D873 /* CommentsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableView.m; sourceTree = "<group>"; };
+		22426DCA18FCCD4600B5D873 /* DetailTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTabBar.h; sourceTree = "<group>"; };
+		22426DCB18FCCD4600B5D873 /* DetailTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTabBar.m; sourceTree = "<group>"; };
 		C956BE3D18F36BE9008D9505 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C956BE4018F3BAF4008D9505 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		C956BE4118F3BAF4008D9505 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
@@ -129,6 +137,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22426DC818FCC97B00B5D873 /* CommentsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				22426DC518FCC96600B5D873 /* CommentsTableView.h */,
+				22426DC618FCC96600B5D873 /* CommentsTableView.m */,
+			);
+			name = CommentsTableView;
+			sourceTree = "<group>";
+		};
+		22426DC918FCCCEE00B5D873 /* DetailTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				22426DCA18FCCD4600B5D873 /* DetailTabBar.h */,
+				22426DCB18FCCD4600B5D873 /* DetailTabBar.m */,
+			);
+			name = DetailTabBar;
+			sourceTree = "<group>";
+		};
 		C956BE3F18F3BADC008D9505 /* TempView */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +217,9 @@
 		C98B465518F3524200558EBC /* RateItWashU */ = {
 			isa = PBXGroup;
 			children = (
+				22426DC918FCCCEE00B5D873 /* DetailTabBar */,
+				22426DC818FCC97B00B5D873 /* CommentsTableView */,
+				22426DC318FCB18700B5D873 /* Whispers-hero.jpg */,
 				C9A95FE718F4631200832180 /* Images */,
 				C9A95FE418F45EA100832180 /* DetailView */,
 				C956BE4318F3C714008D9505 /* MapView */,
@@ -355,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22426DC418FCB18700B5D873 /* Whispers-hero.jpg in Resources */,
 				C98B466818F3524200558EBC /* Images.xcassets in Resources */,
 				C98B465A18F3524200558EBC /* InfoPlist.strings in Resources */,
 				C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */,
@@ -382,6 +412,8 @@
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
+				22426DC718FCC96600B5D873 /* CommentsTableView.m in Sources */,
+				22426DCC18FCCD4600B5D873 /* DetailTabBar.m in Sources */,
 				C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */,
 				C98B465C18F3524200558EBC /* main.m in Sources */,
 				C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */,
@@ -516,7 +548,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RateItWashU/RateItWashU-Prefix.pch";
 				INFOPLIST_FILE = "RateItWashU/RateItWashU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -533,7 +567,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RateItWashU/RateItWashU-Prefix.pch";
 				INFOPLIST_FILE = "RateItWashU/RateItWashU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
