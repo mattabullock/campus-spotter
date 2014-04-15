@@ -14,18 +14,14 @@
 
 @implementation MapViewController
 
+@synthesize mapView;
 
 -(IBAction)findMyLocation:(id)sender {
 //    NSLog(@"why don't you work?!?!?!?!?!?!");
 //    _mapView.delegate = self;
-    _mapView.showsUserLocation = YES;
+    
 //    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
     
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    [mapView setCenterCoordinate:mapView.userLocation.location.coordinate animated:YES];
-//    mapView.showsUserLocation=NO;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,16 +30,35 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [_mapView setShowsUserLocation:YES];
-//    _mapView.delegate=self;
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:38.648769
+                                                            longitude:-90.308676
+                                                                 zoom:17];
+    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView.settings.myLocationButton = YES;
+    mapView.delegate = self;
+    self.view = mapView;
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(38.648769, -90.308676);
+    marker.title = @"Sydney";
+    marker.snippet = @"Australia";
+    marker.map = mapView;
+//    mapView.myLocationEnabled = YES;
+//    mapView.mapType =
+    //38.648769, -90.308676
 
     // Do any additional setup after loading the view.
+}
+
+-(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker {
+    NSLog(@"stupid");
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

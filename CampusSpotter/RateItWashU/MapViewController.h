@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MapKit/MapKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <GMSMapViewDelegate>
 
-@property IBOutlet MKMapView *mapView;
+@property IBOutlet GMSMapView *mapView;
 
 -(IBAction)findMyLocation:(id)sender;
 

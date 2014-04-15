@@ -15,6 +15,7 @@
     [Parse setApplicationId:@"caZZBvXnuM0Djz5dta0qubCA17lvlEJfCjItz8Mc"
                   clientKey:@"pqLMzCfhni4daiKJhaB3Mkc7q85jxBoDlKmo54jA"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [GMSServices provideAPIKey:@"AIzaSyAWdu9tpX23FSBRSLY7KQxSxgYFQfMUNw4"];
     return YES;
 }
 							
