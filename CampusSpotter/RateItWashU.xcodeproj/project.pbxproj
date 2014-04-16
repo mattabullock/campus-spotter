@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225A71DA18FCDA5A0040EBC3 /* CommentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 225A71D618FCDA5A0040EBC3 /* CommentsTableView.m */; };
+		225A71DB18FCDA5A0040EBC3 /* DetailTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 225A71D818FCDA5A0040EBC3 /* DetailTabBar.m */; };
+		22ED3D7F18FDD60A00A5EA1A /* starOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D7D18FDD60A00A5EA1A /* starOn.png */; };
+		22ED3D8018FDD60B00A5EA1A /* starOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D7E18FDD60A00A5EA1A /* starOff.png */; };
+		22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ED3D8318FDE58700A5EA1A /* SubmitReview.m */; };
+		22ED3D8618FDF1C400A5EA1A /* brookings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D8518FDF1C400A5EA1A /* brookings.jpg */; };
 		C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4518F3C722008D9505 /* MapViewController.m */; };
 		C956BE3E18F36BE9008D9505 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C956BE3D18F36BE9008D9505 /* MapKit.framework */; };
 		C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4118F3BAF4008D9505 /* TempViewController.m */; };
@@ -63,6 +69,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		225A71D518FCDA5A0040EBC3 /* CommentsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableView.h; sourceTree = "<group>"; };
+		225A71D618FCDA5A0040EBC3 /* CommentsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableView.m; sourceTree = "<group>"; };
+		225A71D718FCDA5A0040EBC3 /* DetailTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTabBar.h; sourceTree = "<group>"; };
+		225A71D818FCDA5A0040EBC3 /* DetailTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTabBar.m; sourceTree = "<group>"; };
+		22ED3D7D18FDD60A00A5EA1A /* starOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starOn.png; sourceTree = "<group>"; };
+		22ED3D7E18FDD60A00A5EA1A /* starOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starOff.png; sourceTree = "<group>"; };
+		22ED3D8218FDE58700A5EA1A /* SubmitReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitReview.h; sourceTree = "<group>"; };
+		22ED3D8318FDE58700A5EA1A /* SubmitReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitReview.m; sourceTree = "<group>"; };
+		22ED3D8518FDF1C400A5EA1A /* brookings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brookings.jpg; sourceTree = "<group>"; };
 		C956BE3D18F36BE9008D9505 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C956BE4018F3BAF4008D9505 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		C956BE4118F3BAF4008D9505 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
@@ -164,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22ED3D8118FDE54B00A5EA1A /* SubmitReview */ = {
+			isa = PBXGroup;
+			children = (
+				22ED3D8218FDE58700A5EA1A /* SubmitReview.h */,
+				22ED3D8318FDE58700A5EA1A /* SubmitReview.m */,
+			);
+			name = SubmitReview;
+			sourceTree = "<group>";
+		};
 		C956BE3F18F3BADC008D9505 /* TempView */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +261,11 @@
 		C98B465518F3524200558EBC /* RateItWashU */ = {
 			isa = PBXGroup;
 			children = (
+				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
+				225A71D518FCDA5A0040EBC3 /* CommentsTableView.h */,
+				225A71D618FCDA5A0040EBC3 /* CommentsTableView.m */,
+				225A71D718FCDA5A0040EBC3 /* DetailTabBar.h */,
+				225A71D818FCDA5A0040EBC3 /* DetailTabBar.m */,
 				C9A95FE718F4631200832180 /* Images */,
 				C9A95FE418F45EA100832180 /* DetailView */,
 				C956BE4318F3C714008D9505 /* MapView */,
@@ -322,6 +351,9 @@
 		C9A95FE718F4631200832180 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22ED3D7D18FDD60A00A5EA1A /* starOn.png */,
+				22ED3D8518FDF1C400A5EA1A /* brookings.jpg */,
+				22ED3D7E18FDD60A00A5EA1A /* starOff.png */,
 				C9A95FE518F4630E00832180 /* blue-cog-hi.png */,
 			);
 			name = Images;
@@ -402,11 +434,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ED3D8618FDF1C400A5EA1A /* brookings.jpg in Resources */,
 				C98B466818F3524200558EBC /* Images.xcassets in Resources */,
 				C98B465A18F3524200558EBC /* InfoPlist.strings in Resources */,
+				22ED3D8018FDD60B00A5EA1A /* starOff.png in Resources */,
 				C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */,
 				C98B466318F3524200558EBC /* Main.storyboard in Resources */,
 				C972655418FCB19F008FBF6F /* GoogleMaps.bundle in Resources */,
+				22ED3D7F18FDD60A00A5EA1A /* starOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +465,9 @@
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
+				225A71DA18FCDA5A0040EBC3 /* CommentsTableView.m in Sources */,
+				225A71DB18FCDA5A0040EBC3 /* DetailTabBar.m in Sources */,
+				22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */,
 				C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */,
 				C98B465C18F3524200558EBC /* main.m in Sources */,
 				C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */,
@@ -564,6 +602,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RateItWashU/RateItWashU-Prefix.pch";
 				INFOPLIST_FILE = "RateItWashU/RateItWashU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -582,6 +621,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RateItWashU/RateItWashU-Prefix.pch";
 				INFOPLIST_FILE = "RateItWashU/RateItWashU-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
