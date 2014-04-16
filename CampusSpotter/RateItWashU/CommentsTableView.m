@@ -28,7 +28,9 @@
     [super viewDidLoad];
     DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
     item = [parent item];
+    [self.tableView setContentInset:UIEdgeInsetsMake(65,0,65,0)];
 
+    [self.tabBarItem setTitle: @"Comments"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -53,12 +55,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    // Return the number of rows in the section.
-    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
-    [query whereKey:@"item" equalTo:item];
-    NSArray * objects = [query findObjects];
-    NSLog(@"COUNT=%d", objects.count);
-    return objects.count;
+    DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
+    comments = [parent comments];
+    return comments.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +67,34 @@
     
     // Configure the cell...
     if (cell == NULL) {
+        PFObject * comment = (PFObject *)[comments objectAtIndex:indexPath.row];
         cell = [[UITableViewCell alloc] init];
+        
+        UILabel * nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width/3, cell.frame.size.height/2)];
+        nameLabel.text = comment[@"username"];
+        nameLabel.textAlignment = NSTextAlignmentCenter;
+        [cell addSubview:nameLabel];
+        
+        UILabel * commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(cell.frame.size.width/3, 0, 2*cell.frame.size.width/3, cell.frame.size.height)];
+        commentLabel.text = comment[@"commentTitle"];
+        commentLabel.font = [UIFont systemFontOfSize:13];
+        [cell addSubview:commentLabel];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        //Add the stars
+        int starSize = cell.frame.size.height/2-3;
+        int starSpacing = ((cell.frame.size.width/3)-5*starSize - 10)/4;
+        for (int i = 0; i < 5; i++) {
+            UIImageView * currentStar = [[UIImageView alloc] initWithFrame: CGRectMake(5 + i*(starSize + starSpacing), cell.frame.size.height/2, starSize, starSize)];
+            if ([comment[@"rating"] intValue] >= (i+1)) {
+                currentStar.image = [UIImage imageNamed:@"starOn.png"];
+            }
+            else {
+                currentStar.image = [UIImage imageNamed:@"starOff.png"];
+            }
+            [cell addSubview:currentStar];
+        }
+        
     }
     
     return cell;

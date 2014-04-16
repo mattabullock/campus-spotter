@@ -11,6 +11,8 @@
 
 @interface DetailTabBar : UITabBarController {
     PFObject * item;
+    NSArray * comments;
 }
 @property PFObject * item;
+@property NSArray * comments;
 @end

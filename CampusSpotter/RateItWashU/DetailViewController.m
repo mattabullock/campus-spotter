@@ -15,12 +15,12 @@
 @implementation DetailViewController
 @synthesize item;
 @synthesize imageView;
+@synthesize star1, star2, star3, star4, star5;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
     }
     return self;
 }
@@ -28,11 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];// Custom initialization
-    
+    stars = [[NSArray alloc] initWithObjects:star1, star2, star3, star4, star5, nil];
+
     DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
     item = [parent item];
     [self updateDisplay];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.tabBarItem setTitle: @"Details"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +52,24 @@
             [imageView setImage: image];
         }
     }];
+    
+    //Calculate average rating
+    DetailTabBar * parent = (DetailTabBar *)self.tabBarController;
+    NSArray * comments = [parent comments];
+    int avgRating = 0;
+    for (PFObject * comment in comments) {
+        avgRating += [comment[@"rating"] intValue];
+    }
+    avgRating = avgRating/comments.count;
+    NSLog(@"Avg rating: %d", avgRating);
+    for (int i = 0; i < 5; i++) {
+        UIImageView * currentStar = [stars objectAtIndex:i];
+        currentStar.image = [UIImage imageNamed:@"starOff.png"];
+        if (avgRating >= (i+1)) {
+            currentStar.image = [UIImage imageNamed:@"starOn.png"];
+        }
+    }
+    
 }
 /*
 #pragma mark - Navigation

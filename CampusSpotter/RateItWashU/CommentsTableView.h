@@ -12,6 +12,7 @@
 
 @interface CommentsTableView : UITableViewController {
     PFObject * item;
+    NSArray * comments;
 }
 
 @end

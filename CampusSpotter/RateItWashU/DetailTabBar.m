@@ -14,6 +14,7 @@
 
 @implementation DetailTabBar
 @synthesize item;
+@synthesize comments;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,14 +44,11 @@
             PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
             item[@"MainPhoto"] = imageFile;
             [item saveInBackground];
-            
-            //TEST
-            PFObject *testObject = [PFObject objectWithClassName:@"Comment"];
-            testObject[@"user"] = [PFUser currentUser];
-            testObject[@"comment"] = @"Test Comment";
-            testObject[@"rating"] = @5;
-            testObject[@"item"] = item;
-            [testObject saveInBackground];
+    
+    
+            PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
+            [query2 whereKey:@"item" equalTo:item];
+            comments = [query2 findObjects];
 
 
 	// Do any additional setup after loading the view.
