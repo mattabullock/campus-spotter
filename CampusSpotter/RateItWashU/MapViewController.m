@@ -15,6 +15,8 @@
 @implementation MapViewController
 
 @synthesize mapView;
+@synthesize selectedMarker;
+@synthesize selectedInfoWindow;
 
 -(IBAction)findMyLocation:(id)sender {
 //    NSLog(@"why don't you work?!?!?!?!?!?!");
@@ -28,7 +30,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     
     return self;
@@ -44,21 +46,40 @@
     mapView.settings.myLocationButton = YES;
     mapView.delegate = self;
     self.view = mapView;
+    
+    [self loadMarkers];
+    
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(38.648769, -90.308676);
     marker.title = @"Sydney";
     marker.snippet = @"Australia";
     marker.map = mapView;
-//    mapView.myLocationEnabled = YES;
-//    mapView.mapType =
-    //38.648769, -90.308676
-
-    // Do any additional setup after loading the view.
 }
 
 -(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker {
-    NSLog(@"stupid");
+    [selectedInfoWindow removeFromSuperview];
+    selectedInfoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    selectedInfoWindow.frame = CGRectMake(0, self.view.frame.size.height - 70 - self.tabBarController.tabBar.frame.size.height, 320, 70);
+    [self.view addSubview:selectedInfoWindow];
+    selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor redColor]];
+    
+    selectedInfoWindow.name.text = marker.title;
+    
+    selectedMarker = marker;
+    selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
+    
     return YES;
+}
+
+-(void)addMarker:(PFObject *) pfObj {
+    ParseMarker *marker = [[ParseMarker alloc] initWithPFObj:pfObj];
+    marker.map = mapView;
+}
+
+-(void)loadMarkers {
+    // get location
+    // get PFObjects of nearby points of interest
+    // foreach call addMarker
 }
 
 - (void)didReceiveMemoryWarning
