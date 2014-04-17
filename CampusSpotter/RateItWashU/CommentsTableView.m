@@ -7,6 +7,7 @@
 //
 
 #import "CommentsTableView.h"
+#import "CommentDetail.h"
 
 @interface CommentsTableView ()
 
@@ -37,6 +38,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,7 +141,11 @@
 }
 */
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"commentDetail" sender:(PFObject *)[comments objectAtIndex:indexPath.row]];
+}
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -147,8 +153,14 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    CommentDetail * detail = segue.destinationViewController;
+    PFObject * comment = sender;
+    [detail setAuthor: comment[@"username"]];
+    [detail setComment: comment[@"comment"]];
+    [detail setCommentTitle: comment[@"commentTitle"]];
+    [detail setRating: [comment[@"rating"] intValue]];
 }
 
- */
+
 
 @end
