@@ -7,7 +7,12 @@
 //
 
 #import <GoogleMaps/GoogleMaps.h>
+#import <Parse/Parse.h>
 
 @interface ParseMarker : GMSMarker
+
+@property (weak, nonatomic) PFObject *parseData;
+
+-(id)initWithPFObj:(PFObject *)pfObj;
 
 @end
