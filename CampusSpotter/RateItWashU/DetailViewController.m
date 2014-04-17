@@ -60,7 +60,11 @@
     for (PFObject * comment in comments) {
         avgRating += [comment[@"rating"] intValue];
     }
-    avgRating = avgRating/comments.count;
+    if(comments.count > 0) {
+        avgRating = avgRating/comments.count;
+    } else {
+        avgRating = 0;
+    }
     NSLog(@"Avg rating: %d", avgRating);
     for (int i = 0; i < 5; i++) {
         UIImageView * currentStar = [stars objectAtIndex:i];

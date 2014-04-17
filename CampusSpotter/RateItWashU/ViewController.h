@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "CategoriesViewController.h"
+#import "ListViewController.h"
 
 @interface ViewController : UIViewController
 

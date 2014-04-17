@@ -17,14 +17,7 @@
 @synthesize mapView;
 @synthesize selectedMarker;
 @synthesize selectedInfoWindow;
-
--(IBAction)findMyLocation:(id)sender {
-//    NSLog(@"why don't you work?!?!?!?!?!?!");
-//    _mapView.delegate = self;
-    
-//    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-}
+@synthesize markers;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    markers = [[NSMutableArray alloc] init];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:38.648769
                                                             longitude:-90.308676
                                                                  zoom:17];
@@ -49,22 +43,15 @@
     
     [self loadMarkers];
     
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(38.6487616,-90.3100913);
-    marker.title = @"Wash U";
-    marker.map = mapView;
-    
-    GMSMarker *marker2 = [[GMSMarker alloc] init];
-    marker2.position = CLLocationCoordinate2DMake(38.6484348,-90.3078168);
-    marker2.title = @"Olin";
-    marker2.map = mapView;
 }
 
--(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker {
+-(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(ParseMarker *)marker {
     [selectedInfoWindow removeFromSuperview];
     selectedInfoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
     [selectedInfoWindow.details addTarget:self action:@selector(detailsClicked) forControlEvents:UIControlEventTouchUpInside];
     selectedInfoWindow.frame = CGRectMake(0, self.view.frame.size.height - 70 - self.tabBarController.tabBar.frame.size.height, 320, 70);
+    selectedInfoWindow.data = marker.parseData;
+    [selectedInfoWindow getRating];
     [self.view addSubview:selectedInfoWindow];
     selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor redColor]];
     
@@ -79,13 +66,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"YOUR_SEGUE_NAME_HERE"])
+    if ([[segue identifier] isEqualToString:@"mapToDetails"])
     {
         // Get reference to the destination view controller
-        YourViewController *vc = [segue destinationViewController];
-        
-        // Pass any objects to the view controller here, like...
-        [vc setMyObjectHere:object];
+        NSLog(@"%@",selectedMarker.parseData);
+        [[segue destinationViewController] setItem:selectedMarker.parseData];
     }
 }
 
@@ -98,10 +83,29 @@
     marker.map = mapView;
 }
 
+-(void)changeCategory {
+    [self loadMarkers];
+}
+
 -(void)loadMarkers {
-    // get location
-    // get PFObjects of nearby points of interest
-    // foreach call addMarker
+    for(ParseMarker *pm in markers) {
+        pm.map = nil;
+    }
+    
+    [markers removeAllObjects];
+    
+    NSArray *temp = ((MainTabBarController*)self.tabBarController).places;
+    
+    for(PFObject *p in temp) {
+        ParseMarker *marker = [[ParseMarker alloc] init];
+        marker.parseData = p;
+        PFGeoPoint *geo = p[@"Location"];
+        marker.position = CLLocationCoordinate2DMake(geo.latitude, geo.longitude);
+        NSString *title = p[@"Title"];
+        marker.title = title;
+        marker.map = mapView;
+        [markers addObject:marker];
+    }
 }
 
 - (void)didReceiveMemoryWarning

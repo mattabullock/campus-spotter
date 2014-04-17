@@ -7,6 +7,8 @@
 //
 
 #import "MainTabBarController.h"
+#import "MapViewController.h"
+#import <Parse/Parse.h>
 
 @interface MainTabBarController ()
 
@@ -16,6 +18,7 @@
 
 @synthesize categories;
 @synthesize actionSheet;
+@synthesize places;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,10 +31,22 @@
 
 - (void)viewDidLoad
 {
-    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Bathrooms", @"Food", @"Study Spots",nil];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@"Categories" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Bathrooms", @"Food", @"Study Spots",nil];
     categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", nil];
     [actionSheet setBounds:CGRectMake(0,0,320, 610)];
-	
+	PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    [query whereKey:@"CategoryNumber" equalTo:@1];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu places.", (unsigned long)objects.count);
+            places = objects;
+            [self sendUpdate];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -54,9 +69,45 @@
 */
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-
-    //REDO EVERYTHING
+    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    if(buttonIndex == 0) {
+        [query whereKey:@"CategoryNumber" equalTo:@1]; //bathroom
+        MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
+        [mapViewC.selectedInfoWindow removeFromSuperview];
+    } else if(buttonIndex == 1) {
+        [query whereKey:@"CategoryNumber" equalTo:@2]; //food
+        MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
+        [mapViewC.selectedInfoWindow removeFromSuperview];
+    } else if(buttonIndex == 2) {
+        [query whereKey:@"CategoryNumber" equalTo:@3]; //study spot
+        MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
+        [mapViewC.selectedInfoWindow removeFromSuperview];
+    } else { //
+        return;
+    }
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu places.", (unsigned long)objects.count);
+            places = objects;
+            [self sendUpdate];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     
+}
+
+- (void) sendUpdate {
+    id <UpdateListener> lvc = [[self viewControllers] objectAtIndex:0];
+    if ([lvc conformsToProtocol:@protocol(UpdateListener)]) {
+        [lvc changeCategory];
+    }
+    id <UpdateListener> mvc = [[self viewControllers] objectAtIndex:1];
+    if ([mvc conformsToProtocol:@protocol(UpdateListener)]) {
+        [mvc changeCategory];
+    }
 }
 - (IBAction)chooseCategory:(id)sender {
     [actionSheet showInView:self.view];

@@ -11,7 +11,7 @@
 
 @interface ParseMarker : GMSMarker
 
-@property (weak, nonatomic) PFObject *parseData;
+@property (strong, nonatomic) PFObject *parseData;
 
 -(id)initWithPFObj:(PFObject *)pfObj;
 

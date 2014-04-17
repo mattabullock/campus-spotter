@@ -11,13 +11,15 @@
 #import <Parse/Parse.h>
 #import "InfoWindow.h"
 #import "ParseMarker.h"
+#import "MainTabBarController.h"
+#import "DetailTabBar.h"
 
-@interface MapViewController : UIViewController <GMSMapViewDelegate>
+@interface MapViewController : UIViewController <GMSMapViewDelegate, UpdateListener>
+
+@property NSMutableArray *markers;
 
 @property IBOutlet GMSMapView *mapView;
-@property GMSMarker *selectedMarker;
+@property ParseMarker *selectedMarker;
 @property InfoWindow *selectedInfoWindow;
-
--(IBAction)findMyLocation:(id)sender;
 
 @end

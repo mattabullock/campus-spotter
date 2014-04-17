@@ -6,27 +6,25 @@
 //
 //
 
-#import "CategoriesViewController.h"
+#import "ListViewController.h"
 
-@interface CategoriesViewController ()
+
+
+@interface ListViewController ()
 
 @end
 
-@implementation CategoriesViewController
+@implementation ListViewController
 
-@synthesize categories;
+@synthesize places;
 
 - (void)viewDidLoad
 {
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationItem setHidesBackButton:YES];
     
-    self.title = @"Categories";
-    categories = [[NSArray alloc] initWithObjects:
-                    @"Ibby's",
-                    @"Whispers Cafe",
-                    @"WashU Wok",
-                    @"Grizzly Grill", nil];
+    self.title = @"List";
+    places = ((MainTabBarController*)self.tabBarController).places;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(print_Message)];
     
@@ -60,7 +58,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [categories count];
+    return [places count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,9 +75,14 @@
     
     // Configure the cell...
     
-    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
+    cell.textLabel.text = ((NSString*)[places objectAtIndex:indexPath.row][@"Title"]);
     
     return cell;
+}
+
+-(void)changeCategory {
+    places = ((MainTabBarController*)self.tabBarController).places;
+    [self.tableView reloadData];
 }
 
 /*

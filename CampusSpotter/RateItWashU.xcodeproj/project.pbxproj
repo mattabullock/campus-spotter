@@ -56,7 +56,7 @@
 		C98B469318F3530300558EBC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B469218F3530300558EBC /* Security.framework */; };
 		C98B469518F3530A00558EBC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B469418F3530A00558EBC /* StoreKit.framework */; };
 		C98B469718F3531500558EBC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B469618F3531500558EBC /* SystemConfiguration.framework */; };
-		C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469918F3578F00558EBC /* CategoriesViewController.m */; };
+		C98B469B18F3578F00558EBC /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469918F3578F00558EBC /* ListViewController.m */; };
 		C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469E18F35C4E00558EBC /* RegistrationViewController.m */; };
 		C991632A18FF8C170002E147 /* InfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C991632818FF8C170002E147 /* InfoWindow.m */; };
 		C991632B18FF8C170002E147 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C991632918FF8C170002E147 /* InfoWindow.xib */; };
@@ -137,8 +137,8 @@
 		C98B469218F3530300558EBC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C98B469418F3530A00558EBC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C98B469618F3531500558EBC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C98B469818F3578F00558EBC /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
-		C98B469918F3578F00558EBC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		C98B469818F3578F00558EBC /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		C98B469918F3578F00558EBC /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		C98B469D18F35C4E00558EBC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		C98B469E18F35C4E00558EBC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		C991632718FF8C170002E147 /* InfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoWindow.h; sourceTree = "<group>"; };
@@ -275,12 +275,13 @@
 		C948CF4A18FFA00800FEC1C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C98B46A418F35C8C00558EBC /* ListView */,
 				C9A95FE418F45EA100832180 /* DetailView */,
 				C956BE4318F3C714008D9505 /* MapView */,
-				C956BE3F18F3BADC008D9505 /* TempView */,
-				C98B46A418F35C8C00558EBC /* CategoriesView */,
-				C98B46A318F35C6E00558EBC /* ViewController */,
 				C98B46A218F35C5D00558EBC /* RegistrationView */,
+				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
+				C956BE3F18F3BADC008D9505 /* TempView */,
+				C98B46A318F35C6E00558EBC /* ViewController */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -363,7 +364,6 @@
 				C948CF4A18FFA00800FEC1C4 /* Views */,
 				C948CF4918FF9FC100FEC1C4 /* TabBarControllers */,
 				C948CF4618FF9F6A00FEC1C4 /* CommentsTable */,
-				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
 				C9A95FE718F4631200832180 /* Images */,
 				C98B465E18F3524200558EBC /* AppDelegate.h */,
 				C98B465F18F3524200558EBC /* AppDelegate.m */,
@@ -422,13 +422,13 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		C98B46A418F35C8C00558EBC /* CategoriesView */ = {
+		C98B46A418F35C8C00558EBC /* ListView */ = {
 			isa = PBXGroup;
 			children = (
-				C98B469818F3578F00558EBC /* CategoriesViewController.h */,
-				C98B469918F3578F00558EBC /* CategoriesViewController.m */,
+				C98B469818F3578F00558EBC /* ListViewController.h */,
+				C98B469918F3578F00558EBC /* ListViewController.m */,
 			);
-			name = CategoriesView;
+			name = ListView;
 			sourceTree = "<group>";
 		};
 		C9A95FE418F45EA100832180 /* DetailView */ = {
@@ -501,6 +501,9 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
+					C98B464B18F3524200558EBC = {
+						DevelopmentTeam = 2QT42FZAH3;
+					};
 					C98B466C18F3524200558EBC = {
 						TestTargetID = C98B464B18F3524200558EBC;
 					};
@@ -567,7 +570,7 @@
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				22E9A4CF18FF647600D31322 /* CommentDetail.m in Sources */,
-				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
+				C98B469B18F3578F00558EBC /* ListViewController.m in Sources */,
 				C991632A18FF8C170002E147 /* InfoWindow.m in Sources */,
 				225A71DA18FCDA5A0040EBC3 /* CommentsTableView.m in Sources */,
 				225A71DB18FCDA5A0040EBC3 /* DetailTabBar.m in Sources */,
@@ -699,6 +702,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -709,6 +714,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -718,6 +724,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -728,6 +736,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

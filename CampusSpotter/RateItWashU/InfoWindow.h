@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface InfoWindow : UIView
+@interface InfoWindow : UIView {
+    NSArray * stars;
+}
+
+-(void)getRating;
+
+@property (strong,nonatomic) PFObject *data;
 
 @property (weak, nonatomic) IBOutlet UIButton *details;
 @property (weak, nonatomic) IBOutlet UIButton *directions;

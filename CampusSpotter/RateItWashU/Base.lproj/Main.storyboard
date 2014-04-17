@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2192" y="96"/>
+            <point key="canvasLocation" x="-2508" y="96"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rq-Mg-FWX">
@@ -132,16 +132,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLr-07-vBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1917" y="1003"/>
+            <point key="canvasLocation" x="-2077" y="543"/>
         </scene>
-        <!--Custom Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="5eV-MI-ORi">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWY-nW-W1U" customClass="CustomTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWY-nW-W1U" customClass="MainTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="GqN-Yo-lfV">
                         <barButtonItem key="rightBarButtonItem" title="Category" id="5Pg-aD-BM4">
                             <connections>
-                                <action selector="chooseCategory:" destination="bWY-nW-W1U" id="qng-dN-lbI"/>
+                                <action selector="chooseCategory:" destination="bWY-nW-W1U" id="KUM-fy-p2R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="-1152" y="212"/>
         </scene>
-        <!--Categories View Controller - Categories-->
+        <!--List View Controller - Categories-->
         <scene sceneID="Vmf-j7-5Wt">
             <objects>
-                <tableViewController storyboardIdentifier="categories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hJI-i9-ZlA" customClass="CategoriesViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="categories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hJI-i9-ZlA" customClass="ListViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3GQ-Pk-8ZX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,7 +356,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oQE-Vs-WSe">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQE-Vs-WSe" id="mg9-pl-BFb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -591,6 +591,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0Bl-WV-x9b"/>
-        <segue reference="GBE-cw-CFT"/>
+        <segue reference="Suz-D6-bd3"/>
     </inferredMetricsTieBreakers>
 </document>

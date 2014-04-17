@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface DetailTabBar : UITabBarController {
-    PFObject * item;
-    NSArray * comments;
-}
-@property PFObject * item;
-@property NSArray * comments;
+@interface DetailTabBar : UITabBarController
+@property (strong,nonatomic) PFObject *item;
+@property (strong,nonatomic) NSArray *comments;
+@property (strong,nonatomic) NSString *test;
 @end

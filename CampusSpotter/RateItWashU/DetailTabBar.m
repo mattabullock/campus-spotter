@@ -28,22 +28,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-    [query whereKey:@"Title" equalTo:@"Brookings"];
-    NSArray * objects = [query findObjects];
-    
-            
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %lu objects.", (unsigned long)objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                item = object;
-            }
-            
-            NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Whispers-hero.jpg"]);
-            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-            item[@"MainPhoto"] = imageFile;
-            [item saveInBackground];
+    NSLog(@"%@",(NSString*)item[@"Title"]);
+//    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+//    [query whereKey:@"Title" equalTo:@"Brookings"];
+//    NSArray * objects = [query findObjects];
+//    
+//            
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %lu objects.", (unsigned long)objects.count);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                item = object;
+//            }
+//            
+//            NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Whispers-hero.jpg"]);
+//            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
+//            item[@"MainPhoto"] = imageFile;
+//            [item saveInBackground];
     
     
             PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
