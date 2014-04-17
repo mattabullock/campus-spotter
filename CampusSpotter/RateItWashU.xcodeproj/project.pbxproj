@@ -58,6 +58,9 @@
 		C98B469718F3531500558EBC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98B469618F3531500558EBC /* SystemConfiguration.framework */; };
 		C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469918F3578F00558EBC /* CategoriesViewController.m */; };
 		C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469E18F35C4E00558EBC /* RegistrationViewController.m */; };
+		C991632A18FF8C170002E147 /* InfoWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = C991632818FF8C170002E147 /* InfoWindow.m */; };
+		C991632B18FF8C170002E147 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C991632918FF8C170002E147 /* InfoWindow.xib */; };
+		C991632E18FF8C240002E147 /* ParseMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = C991632D18FF8C240002E147 /* ParseMarker.m */; };
 		C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A95FE218F45E9C00832180 /* DetailViewController.m */; };
 		C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A95FE518F4630E00832180 /* blue-cog-hi.png */; };
 		C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7CE1018FF751600724FDC /* CustomTabBarController.m */; };
@@ -138,6 +141,11 @@
 		C98B469918F3578F00558EBC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		C98B469D18F35C4E00558EBC /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		C98B469E18F35C4E00558EBC /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		C991632718FF8C170002E147 /* InfoWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoWindow.h; sourceTree = "<group>"; };
+		C991632818FF8C170002E147 /* InfoWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoWindow.m; sourceTree = "<group>"; };
+		C991632918FF8C170002E147 /* InfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		C991632C18FF8C240002E147 /* ParseMarker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseMarker.h; sourceTree = "<group>"; };
+		C991632D18FF8C240002E147 /* ParseMarker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseMarker.m; sourceTree = "<group>"; };
 		C9A95FE118F45E9C00832180 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C9A95FE218F45E9C00832180 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C9A95FE518F4630E00832180 /* blue-cog-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-cog-hi.png"; sourceTree = "<group>"; };
@@ -282,6 +290,11 @@
 		C98B465518F3524200558EBC /* RateItWashU */ = {
 			isa = PBXGroup;
 			children = (
+				C991632C18FF8C240002E147 /* ParseMarker.h */,
+				C991632D18FF8C240002E147 /* ParseMarker.m */,
+				C991632718FF8C170002E147 /* InfoWindow.h */,
+				C991632818FF8C170002E147 /* InfoWindow.m */,
+				C991632918FF8C170002E147 /* InfoWindow.xib */,
 				22E9A4CC18FF640D00D31322 /* CommentDetail */,
 				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
 				225A71D518FCDA5A0040EBC3 /* CommentsTableView.h */,
@@ -472,6 +485,7 @@
 				C972655418FCB19F008FBF6F /* GoogleMaps.bundle in Resources */,
 				22ED3D7F18FDD60A00A5EA1A /* starOn.png in Resources */,
 				22E9A4D318FF6ED200D31322 /* message.png in Resources */,
+				C991632B18FF8C170002E147 /* InfoWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,12 +505,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C98B466618F3524200558EBC /* ViewController.m in Sources */,
+				C991632E18FF8C240002E147 /* ParseMarker.m in Sources */,
 				C98B466018F3524200558EBC /* AppDelegate.m in Sources */,
 				C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */,
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				22E9A4CF18FF647600D31322 /* CommentDetail.m in Sources */,
 				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
+				C991632A18FF8C170002E147 /* InfoWindow.m in Sources */,
 				225A71DA18FCDA5A0040EBC3 /* CommentsTableView.m in Sources */,
 				225A71DB18FCDA5A0040EBC3 /* DetailTabBar.m in Sources */,
 				22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */,
