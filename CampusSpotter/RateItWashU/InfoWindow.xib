@@ -57,6 +57,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="details" destination="NbH-R3-Aej" id="exh-qv-z6A"/>
                 <outlet property="directions" destination="I03-8D-0og" id="7Ri-LR-lFO"/>
                 <outlet property="name" destination="zaF-xh-rRc" id="ZIu-g1-nv5"/>
                 <outlet property="star1" destination="1Il-hQ-lew" id="5ae-go-7gj"/>

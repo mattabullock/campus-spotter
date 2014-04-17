@@ -6,13 +6,13 @@
 //
 //
 
-#import "CustomTabBarController.h"
+#import "MainTabBarController.h"
 
-@interface CustomTabBarController ()
+@interface MainTabBarController ()
 
 @end
 
-@implementation CustomTabBarController
+@implementation MainTabBarController
 
 @synthesize categories;
 @synthesize actionSheet;

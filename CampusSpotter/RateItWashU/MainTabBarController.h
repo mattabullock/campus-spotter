@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomTabBarController : UITabBarController <UIActionSheetDelegate>
+@interface MainTabBarController : UITabBarController <UIActionSheetDelegate>
 
 @property (strong,nonatomic) NSArray *categories;
 @property (strong,nonatomic) UIActionSheet *actionSheet;

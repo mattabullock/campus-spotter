@@ -50,15 +50,20 @@
     [self loadMarkers];
     
     GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(38.648769, -90.308676);
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
+    marker.position = CLLocationCoordinate2DMake(38.6487616,-90.3100913);
+    marker.title = @"Wash U";
     marker.map = mapView;
+    
+    GMSMarker *marker2 = [[GMSMarker alloc] init];
+    marker2.position = CLLocationCoordinate2DMake(38.6484348,-90.3078168);
+    marker2.title = @"Olin";
+    marker2.map = mapView;
 }
 
 -(BOOL) mapView:(GMSMapView *) mapView didTapMarker:(GMSMarker *)marker {
     [selectedInfoWindow removeFromSuperview];
     selectedInfoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
+    [selectedInfoWindow.details addTarget:self action:@selector(detailsClicked) forControlEvents:UIControlEventTouchUpInside];
     selectedInfoWindow.frame = CGRectMake(0, self.view.frame.size.height - 70 - self.tabBarController.tabBar.frame.size.height, 320, 70);
     [self.view addSubview:selectedInfoWindow];
     selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor redColor]];
@@ -69,6 +74,23 @@
     selectedMarker.icon = [GMSMarker markerImageWithColor:[UIColor blueColor]];
     
     return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"YOUR_SEGUE_NAME_HERE"])
+    {
+        // Get reference to the destination view controller
+        YourViewController *vc = [segue destinationViewController];
+        
+        // Pass any objects to the view controller here, like...
+        [vc setMyObjectHere:object];
+    }
+}
+
+-(void) detailsClicked {
+    [self performSegueWithIdentifier:@"mapToDetails" sender:self];
 }
 
 -(void)addMarker:(PFObject *) pfObj {

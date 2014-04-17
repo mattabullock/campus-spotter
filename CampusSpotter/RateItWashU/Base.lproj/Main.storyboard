@@ -251,23 +251,13 @@
                                 <rect key="frame" x="0.0" y="54" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-6L-vAY">
-                                <rect key="frame" x="242" y="488" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOCATE">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="findMyLocation:" destination="7zJ-Om-wXi" eventType="touchUpInside" id="RSg-NX-uud"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="vHS-fO-3sQ"/>
                     <connections>
                         <outlet property="mapView" destination="KLd-1R-URk" id="J43-SI-52r"/>
-                        <segue destination="e1c-jB-rUR" kind="modal" identifier="mapToDetails" id="GBE-cw-CFT"/>
+                        <segue destination="e1c-jB-rUR" kind="push" identifier="mapToDetails" id="GBE-cw-CFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jl1-iI-ufW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -354,7 +344,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkg-Ri-fdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="184"/>
+            <point key="canvasLocation" x="127" y="212"/>
         </scene>
         <!--Comments Table View - Reviews-->
         <scene sceneID="OzM-QA-PL1">
@@ -366,7 +356,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oQE-Vs-WSe">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQE-Vs-WSe" id="mg9-pl-BFb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -442,6 +432,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="qmV-dT-C8g"/>
                     <connections>
                         <outlet property="authorLabel" destination="4m9-cJ-8Kg" id="vqd-a6-k0B"/>
                         <outlet property="commentLabel" destination="VhO-ZO-gKb" id="mVv-ei-A5X"/>

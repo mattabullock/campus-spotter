@@ -63,7 +63,7 @@
 		C991632E18FF8C240002E147 /* ParseMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = C991632D18FF8C240002E147 /* ParseMarker.m */; };
 		C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A95FE218F45E9C00832180 /* DetailViewController.m */; };
 		C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A95FE518F4630E00832180 /* blue-cog-hi.png */; };
-		C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7CE1018FF751600724FDC /* CustomTabBarController.m */; };
+		C9F7CE1118FF751600724FDC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7CE1018FF751600724FDC /* MainTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,8 +149,8 @@
 		C9A95FE118F45E9C00832180 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C9A95FE218F45E9C00832180 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C9A95FE518F4630E00832180 /* blue-cog-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-cog-hi.png"; sourceTree = "<group>"; };
-		C9F7CE0F18FF751600724FDC /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
-		C9F7CE1018FF751600724FDC /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
+		C9F7CE0F18FF751600724FDC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		C9F7CE1018FF751600724FDC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +217,74 @@
 			name = SubmitReview;
 			sourceTree = "<group>";
 		};
+		C948CF4418FF9F2500FEC1C4 /* ParseMarker */ = {
+			isa = PBXGroup;
+			children = (
+				C991632C18FF8C240002E147 /* ParseMarker.h */,
+				C991632D18FF8C240002E147 /* ParseMarker.m */,
+			);
+			name = ParseMarker;
+			sourceTree = "<group>";
+		};
+		C948CF4518FF9F3800FEC1C4 /* InfoWindow */ = {
+			isa = PBXGroup;
+			children = (
+				C991632718FF8C170002E147 /* InfoWindow.h */,
+				C991632818FF8C170002E147 /* InfoWindow.m */,
+				C991632918FF8C170002E147 /* InfoWindow.xib */,
+			);
+			name = InfoWindow;
+			sourceTree = "<group>";
+		};
+		C948CF4618FF9F6A00FEC1C4 /* CommentsTable */ = {
+			isa = PBXGroup;
+			children = (
+				225A71D518FCDA5A0040EBC3 /* CommentsTableView.h */,
+				225A71D618FCDA5A0040EBC3 /* CommentsTableView.m */,
+			);
+			name = CommentsTable;
+			sourceTree = "<group>";
+		};
+		C948CF4718FF9FA800FEC1C4 /* DetailTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				225A71D718FCDA5A0040EBC3 /* DetailTabBar.h */,
+				225A71D818FCDA5A0040EBC3 /* DetailTabBar.m */,
+			);
+			name = DetailTabBar;
+			sourceTree = "<group>";
+		};
+		C948CF4818FF9FB400FEC1C4 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C9F7CE0F18FF751600724FDC /* MainTabBarController.h */,
+				C9F7CE1018FF751600724FDC /* MainTabBarController.m */,
+			);
+			name = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		C948CF4918FF9FC100FEC1C4 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C948CF4818FF9FB400FEC1C4 /* MainTabBarController */,
+				C948CF4718FF9FA800FEC1C4 /* DetailTabBar */,
+			);
+			name = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		C948CF4A18FFA00800FEC1C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9A95FE418F45EA100832180 /* DetailView */,
+				C956BE4318F3C714008D9505 /* MapView */,
+				C956BE3F18F3BADC008D9505 /* TempView */,
+				C98B46A418F35C8C00558EBC /* CategoriesView */,
+				C98B46A318F35C6E00558EBC /* ViewController */,
+				C98B46A218F35C5D00558EBC /* RegistrationView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		C956BE3F18F3BADC008D9505 /* TempView */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +297,8 @@
 		C956BE4318F3C714008D9505 /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				C948CF4518FF9F3800FEC1C4 /* InfoWindow */,
+				C948CF4418FF9F2500FEC1C4 /* ParseMarker */,
 				C956BE4418F3C722008D9505 /* MapViewController.h */,
 				C956BE4518F3C722008D9505 /* MapViewController.m */,
 			);
@@ -290,29 +360,14 @@
 		C98B465518F3524200558EBC /* RateItWashU */ = {
 			isa = PBXGroup;
 			children = (
-				C991632C18FF8C240002E147 /* ParseMarker.h */,
-				C991632D18FF8C240002E147 /* ParseMarker.m */,
-				C991632718FF8C170002E147 /* InfoWindow.h */,
-				C991632818FF8C170002E147 /* InfoWindow.m */,
-				C991632918FF8C170002E147 /* InfoWindow.xib */,
-				22E9A4CC18FF640D00D31322 /* CommentDetail */,
+				C948CF4A18FFA00800FEC1C4 /* Views */,
+				C948CF4918FF9FC100FEC1C4 /* TabBarControllers */,
+				C948CF4618FF9F6A00FEC1C4 /* CommentsTable */,
 				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
-				225A71D518FCDA5A0040EBC3 /* CommentsTableView.h */,
-				225A71D618FCDA5A0040EBC3 /* CommentsTableView.m */,
-				225A71D718FCDA5A0040EBC3 /* DetailTabBar.h */,
-				225A71D818FCDA5A0040EBC3 /* DetailTabBar.m */,
 				C9A95FE718F4631200832180 /* Images */,
-				C9A95FE418F45EA100832180 /* DetailView */,
-				C956BE4318F3C714008D9505 /* MapView */,
-				C956BE3F18F3BADC008D9505 /* TempView */,
-				C98B46A418F35C8C00558EBC /* CategoriesView */,
-				C98B46A318F35C6E00558EBC /* ViewController */,
-				C98B46A218F35C5D00558EBC /* RegistrationView */,
 				C98B465E18F3524200558EBC /* AppDelegate.h */,
 				C98B465F18F3524200558EBC /* AppDelegate.m */,
 				C98B466118F3524200558EBC /* Main.storyboard */,
-				C9F7CE0F18FF751600724FDC /* CustomTabBarController.h */,
-				C9F7CE1018FF751600724FDC /* CustomTabBarController.m */,
 				C972655318FCB19F008FBF6F /* GoogleMaps.bundle */,
 				C98B466718F3524200558EBC /* Images.xcassets */,
 				C98B465618F3524200558EBC /* Supporting Files */,
@@ -379,6 +434,7 @@
 		C9A95FE418F45EA100832180 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
+				22E9A4CC18FF640D00D31322 /* CommentDetail */,
 				C9A95FE118F45E9C00832180 /* DetailViewController.h */,
 				C9A95FE218F45E9C00832180 /* DetailViewController.m */,
 			);
@@ -507,7 +563,7 @@
 				C98B466618F3524200558EBC /* ViewController.m in Sources */,
 				C991632E18FF8C240002E147 /* ParseMarker.m in Sources */,
 				C98B466018F3524200558EBC /* AppDelegate.m in Sources */,
-				C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */,
+				C9F7CE1118FF751600724FDC /* MainTabBarController.m in Sources */,
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				22E9A4CF18FF647600D31322 /* CommentDetail.m in Sources */,
