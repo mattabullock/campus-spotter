@@ -223,7 +223,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="e1c-jB-rUR" kind="push" id="o1e-qb-5D2"/>
+                                    <segue destination="e1c-jB-rUR" kind="push" identifier="button" id="o1e-qb-5D2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,7 +259,6 @@
                                 </state>
                                 <connections>
                                     <action selector="findMyLocation:" destination="7zJ-Om-wXi" eventType="touchUpInside" id="RSg-NX-uud"/>
-                                    <segue destination="e1c-jB-rUR" kind="push" id="utd-F9-vTA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -268,7 +267,7 @@
                     <tabBarItem key="tabBarItem" title="Map" id="vHS-fO-3sQ"/>
                     <connections>
                         <outlet property="mapView" destination="KLd-1R-URk" id="J43-SI-52r"/>
-                        <segue destination="e1c-jB-rUR" kind="modal" id="GBE-cw-CFT"/>
+                        <segue destination="e1c-jB-rUR" kind="modal" identifier="mapToDetails" id="GBE-cw-CFT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jl1-iI-ufW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -367,7 +366,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oQE-Vs-WSe">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQE-Vs-WSe" id="mg9-pl-BFb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -600,7 +599,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="utd-F9-vTA"/>
         <segue reference="0Bl-WV-x9b"/>
+        <segue reference="GBE-cw-CFT"/>
     </inferredMetricsTieBreakers>
 </document>
