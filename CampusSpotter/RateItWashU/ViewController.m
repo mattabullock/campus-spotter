@@ -18,18 +18,6 @@
 
 - (void)viewDidLoad
 {
-    PFObject *testObject = [PFObject objectWithClassName:@"Item"];
-    testObject[@"Title"] = @"Whispers Cafe";
-    testObject[@"AvgRating"] = @8;
-    testObject[@"CategoryNumber"] = @1;
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-        if (!error) {
-            // do something with the new geoPoint
-            testObject[@"Location"] = geoPoint;
-        }
-    }];
-    [testObject saveInBackground];
-    
     [self.navigationController setNavigationBarHidden:YES];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
