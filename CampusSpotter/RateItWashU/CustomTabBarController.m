@@ -1,20 +1,21 @@
 //
-//  TempViewController.m
+//  CustomTabBarController.m
 //  RateItWashU
 //
-//  Created by Matt Bullock on 4/8/14.
+//  Created by Matt Bullock on 4/16/14.
 //
 //
 
-#import "TempViewController.h"
-#import "ViewController.h"
+#import "CustomTabBarController.h"
 
-@interface TempViewController ()
+@interface CustomTabBarController ()
 
 @end
 
-@implementation TempViewController
+@implementation CustomTabBarController
 
+@synthesize categories;
+@synthesize actionSheet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,13 +25,13 @@
     }
     return self;
 }
-- (IBAction)logoutpressed:(id)sender {
-    [PFUser logOut];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)viewDidLoad
 {
+    actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Bathrooms", @"Food", @"Study Spots",nil];
+    categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", nil];
+    [actionSheet setBounds:CGRectMake(0,0,320, 610)];
+	
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -51,5 +52,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    //REDO EVERYTHING
+    
+}
+- (IBAction)chooseCategory:(id)sender {
+    [actionSheet showInView:self.view];
+}
 
 @end
