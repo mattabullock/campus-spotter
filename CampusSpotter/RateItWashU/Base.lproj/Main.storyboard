@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -85,7 +85,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ws0-BA-RbS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1644" y="96"/>
+            <point key="canvasLocation" x="-1660" y="52"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="TSq-nc-3Yy">
@@ -134,12 +134,16 @@
             </objects>
             <point key="canvasLocation" x="-1917" y="1003"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="5eV-MI-ORi">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWY-nW-W1U" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bWY-nW-W1U" customClass="CustomTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="GqN-Yo-lfV">
-                        <barButtonItem key="rightBarButtonItem" title="Category" id="5Pg-aD-BM4"/>
+                        <barButtonItem key="rightBarButtonItem" title="Category" id="hYd-oj-cla">
+                            <connections>
+                                <action selector="chooseCategory:" destination="bWY-nW-W1U" id="3U7-W6-ZFy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="HED-eD-TaP">
@@ -155,7 +159,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rh-Ts-ikz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152" y="212"/>
+            <point key="canvasLocation" x="-1028" y="252"/>
         </scene>
         <!--Categories View Controller - Categories-->
         <scene sceneID="Vmf-j7-5Wt">
@@ -229,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJO-TF-CBo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-241" y="783"/>
+            <point key="canvasLocation" x="-246" y="973"/>
         </scene>
         <!--Map View Controller - maptodetail-->
         <scene sceneID="3Aa-2Z-cL9">
@@ -247,17 +251,6 @@
                                 <rect key="frame" x="0.0" y="54" width="320" height="464"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lK-6L-vAY">
-                                <rect key="frame" x="242" y="488" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="LOCATE">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="findMyLocation:" destination="7zJ-Om-wXi" eventType="touchUpInside" id="RSg-NX-uud"/>
-                                    <segue destination="e1c-jB-rUR" kind="push" id="utd-F9-vTA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -363,7 +356,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="oQE-Vs-WSe">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oQE-Vs-WSe" id="mg9-pl-BFb">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -520,7 +513,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="GBE-cw-CFT"/>
         <segue reference="0Bl-WV-x9b"/>
-        <segue reference="utd-F9-vTA"/>
     </inferredMetricsTieBreakers>
 </document>

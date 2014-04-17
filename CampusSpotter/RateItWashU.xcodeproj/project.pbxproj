@@ -56,6 +56,7 @@
 		C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98B469E18F35C4E00558EBC /* RegistrationViewController.m */; };
 		C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A95FE218F45E9C00832180 /* DetailViewController.m */; };
 		C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A95FE518F4630E00832180 /* blue-cog-hi.png */; };
+		C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7CE1018FF751600724FDC /* CustomTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		C9A95FE118F45E9C00832180 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C9A95FE218F45E9C00832180 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C9A95FE518F4630E00832180 /* blue-cog-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-cog-hi.png"; sourceTree = "<group>"; };
+		C9F7CE0F18FF751600724FDC /* CustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTabBarController.h; sourceTree = "<group>"; };
+		C9F7CE1018FF751600724FDC /* CustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +279,8 @@
 				C98B465E18F3524200558EBC /* AppDelegate.h */,
 				C98B465F18F3524200558EBC /* AppDelegate.m */,
 				C98B466118F3524200558EBC /* Main.storyboard */,
+				C9F7CE0F18FF751600724FDC /* CustomTabBarController.h */,
+				C9F7CE1018FF751600724FDC /* CustomTabBarController.m */,
 				C972655318FCB19F008FBF6F /* GoogleMaps.bundle */,
 				C98B466718F3524200558EBC /* Images.xcassets */,
 				C98B465618F3524200558EBC /* Supporting Files */,
@@ -462,6 +467,7 @@
 			files = (
 				C98B466618F3524200558EBC /* ViewController.m in Sources */,
 				C98B466018F3524200558EBC /* AppDelegate.m in Sources */,
+				C9F7CE1118FF751600724FDC /* CustomTabBarController.m in Sources */,
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
 				C98B469B18F3578F00558EBC /* CategoriesViewController.m in Sources */,
