@@ -34,7 +34,7 @@
     
             
             // The find succeeded.
-            NSLog(@"Successfully retrieved %d objects.", objects.count);
+            NSLog(@"Successfully retrieved %lu objects.", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
                 item = object;
