@@ -17,6 +17,7 @@
 @implementation ListViewController
 
 @synthesize places;
+@synthesize clickedCell;
 
 - (void)viewDidLoad
 {
@@ -65,11 +66,11 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PFCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if (cell == nil) {
         
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[PFCell alloc] initWithPFObj:[places objectAtIndex:indexPath.row]];
         
     }
     
@@ -83,6 +84,16 @@
 -(void)changeCategory {
     places = ((MainTabBarController*)self.tabBarController).places;
     [self.tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"listtodetail"])
+    {
+        // Get reference to the destination view controller
+        [[segue destinationViewController] setItem:clickedCell.parseData];
+    }
 }
 
 /*
@@ -123,7 +134,7 @@
 }
 */
 
-/*
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
@@ -131,13 +142,11 @@
 {
     // Navigation logic may go here, for example:
     // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
+    clickedCell = (PFCell*)[tableView cellForRowAtIndexPath:indexPath];
+//    NSLog(@"%@",cell.parseData); //replace "dictionary" by the name of the property you created in the subclass
     // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self performSegueWithIdentifier:@"listtodetail" sender:self];
 }
-*/
+
 
 @end
