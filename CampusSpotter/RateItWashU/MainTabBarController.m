@@ -19,6 +19,7 @@
 @synthesize categories;
 @synthesize actionSheet;
 @synthesize places;
+@synthesize favorites;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

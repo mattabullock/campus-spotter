@@ -17,5 +17,6 @@
 @property (strong,nonatomic) NSArray *categories;
 @property (strong,nonatomic) UIActionSheet *actionSheet;
 @property (strong,nonatomic) NSArray *places;
+@property (strong,nonatomic) NSArray *favorites;
 
 @end

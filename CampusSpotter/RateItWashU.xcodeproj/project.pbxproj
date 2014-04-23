@@ -63,6 +63,8 @@
 		C991632E18FF8C240002E147 /* ParseMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = C991632D18FF8C240002E147 /* ParseMarker.m */; };
 		C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A95FE218F45E9C00832180 /* DetailViewController.m */; };
 		C9A95FE618F4630E00832180 /* blue-cog-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A95FE518F4630E00832180 /* blue-cog-hi.png */; };
+		C9CAADA81907927C006413D3 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAADA71907927C006413D3 /* FavoritesViewController.m */; };
+		C9CAADAB190792B2006413D3 /* UserUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAADAA190792B2006413D3 /* UserUploadViewController.m */; };
 		C9F7CE1118FF751600724FDC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9F7CE1018FF751600724FDC /* MainTabBarController.m */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +151,10 @@
 		C9A95FE118F45E9C00832180 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C9A95FE218F45E9C00832180 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C9A95FE518F4630E00832180 /* blue-cog-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-cog-hi.png"; sourceTree = "<group>"; };
+		C9CAADA61907927C006413D3 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		C9CAADA71907927C006413D3 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		C9CAADA9190792B2006413D3 /* UserUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUploadViewController.h; sourceTree = "<group>"; };
+		C9CAADAA190792B2006413D3 /* UserUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUploadViewController.m; sourceTree = "<group>"; };
 		C9F7CE0F18FF751600724FDC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		C9F7CE1018FF751600724FDC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,6 +288,8 @@
 				22ED3D8118FDE54B00A5EA1A /* SubmitReview */,
 				C956BE3F18F3BADC008D9505 /* TempView */,
 				C98B46A318F35C6E00558EBC /* ViewController */,
+				C9CAADAD190792F9006413D3 /* FavoritesViewController */,
+				C9CAADAC190792DE006413D3 /* UserUploadViewController */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -455,6 +463,24 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		C9CAADAC190792DE006413D3 /* UserUploadViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9CAADA9190792B2006413D3 /* UserUploadViewController.h */,
+				C9CAADAA190792B2006413D3 /* UserUploadViewController.m */,
+			);
+			name = UserUploadViewController;
+			sourceTree = "<group>";
+		};
+		C9CAADAD190792F9006413D3 /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9CAADA61907927C006413D3 /* FavoritesViewController.h */,
+				C9CAADA71907927C006413D3 /* FavoritesViewController.m */,
+			);
+			name = "\U0010FavoritesViewController";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,6 +595,7 @@
 				C9F7CE1118FF751600724FDC /* MainTabBarController.m in Sources */,
 				C98B46A018F35C4E00558EBC /* RegistrationViewController.m in Sources */,
 				C9A95FE318F45E9C00832180 /* DetailViewController.m in Sources */,
+				C9CAADA81907927C006413D3 /* FavoritesViewController.m in Sources */,
 				22E9A4CF18FF647600D31322 /* CommentDetail.m in Sources */,
 				C98B469B18F3578F00558EBC /* ListViewController.m in Sources */,
 				C991632A18FF8C170002E147 /* InfoWindow.m in Sources */,
@@ -577,6 +604,7 @@
 				22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */,
 				C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */,
 				C98B465C18F3524200558EBC /* main.m in Sources */,
+				C9CAADAB190792B2006413D3 /* UserUploadViewController.m in Sources */,
 				C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
