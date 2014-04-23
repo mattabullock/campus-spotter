@@ -17,6 +17,8 @@
 		22ED3D8018FDD60B00A5EA1A /* starOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D7E18FDD60A00A5EA1A /* starOff.png */; };
 		22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ED3D8318FDE58700A5EA1A /* SubmitReview.m */; };
 		22ED3D8618FDF1C400A5EA1A /* brookings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D8518FDF1C400A5EA1A /* brookings.jpg */; };
+		C91539EC1907A0B4008E8C0A /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91539EB1907A0B4008E8C0A /* FavoritesViewController.m */; };
+		C91539EF1907A0C5008E8C0A /* UserUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91539EE1907A0C5008E8C0A /* UserUploadViewController.m */; };
 		C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4518F3C722008D9505 /* MapViewController.m */; };
 		C956BE3E18F36BE9008D9505 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C956BE3D18F36BE9008D9505 /* MapKit.framework */; };
 		C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4118F3BAF4008D9505 /* TempViewController.m */; };
@@ -92,6 +94,10 @@
 		22ED3D8218FDE58700A5EA1A /* SubmitReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitReview.h; sourceTree = "<group>"; };
 		22ED3D8318FDE58700A5EA1A /* SubmitReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitReview.m; sourceTree = "<group>"; };
 		22ED3D8518FDF1C400A5EA1A /* brookings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brookings.jpg; sourceTree = "<group>"; };
+		C91539EA1907A0B4008E8C0A /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		C91539EB1907A0B4008E8C0A /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		C91539ED1907A0C5008E8C0A /* UserUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUploadViewController.h; sourceTree = "<group>"; };
+		C91539EE1907A0C5008E8C0A /* UserUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserUploadViewController.m; sourceTree = "<group>"; };
 		C956BE3D18F36BE9008D9505 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C956BE4018F3BAF4008D9505 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		C956BE4118F3BAF4008D9505 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
@@ -220,6 +226,24 @@
 			name = SubmitReview;
 			sourceTree = "<group>";
 		};
+		C91539F01907A0CC008E8C0A /* UserUploadView */ = {
+			isa = PBXGroup;
+			children = (
+				C91539ED1907A0C5008E8C0A /* UserUploadViewController.h */,
+				C91539EE1907A0C5008E8C0A /* UserUploadViewController.m */,
+			);
+			name = UserUploadView;
+			sourceTree = "<group>";
+		};
+		C91539F11907A0E5008E8C0A /* FavoritesView */ = {
+			isa = PBXGroup;
+			children = (
+				C91539EA1907A0B4008E8C0A /* FavoritesViewController.h */,
+				C91539EB1907A0B4008E8C0A /* FavoritesViewController.m */,
+			);
+			name = FavoritesView;
+			sourceTree = "<group>";
+		};
 		C948CF4418FF9F2500FEC1C4 /* ParseMarker */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +302,8 @@
 		C948CF4A18FFA00800FEC1C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C91539F01907A0CC008E8C0A /* UserUploadView */,
+				C91539F11907A0E5008E8C0A /* FavoritesView */,
 				C98B46A418F35C8C00558EBC /* ListView */,
 				C9A95FE418F45EA100832180 /* DetailView */,
 				C956BE4318F3C714008D9505 /* MapView */,
@@ -585,10 +611,12 @@
 				22E9A4CF18FF647600D31322 /* CommentDetail.m in Sources */,
 				C98B469B18F3578F00558EBC /* ListViewController.m in Sources */,
 				C991632A18FF8C170002E147 /* InfoWindow.m in Sources */,
+				C91539EC1907A0B4008E8C0A /* FavoritesViewController.m in Sources */,
 				C9B97D7C1907943300C97F93 /* PFCell.m in Sources */,
 				225A71DA18FCDA5A0040EBC3 /* CommentsTableView.m in Sources */,
 				225A71DB18FCDA5A0040EBC3 /* DetailTabBar.m in Sources */,
 				22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */,
+				C91539EF1907A0C5008E8C0A /* UserUploadViewController.m in Sources */,
 				C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */,
 				C98B465C18F3524200558EBC /* main.m in Sources */,
 				C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */,

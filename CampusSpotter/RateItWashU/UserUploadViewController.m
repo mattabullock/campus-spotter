@@ -2,7 +2,7 @@
 //  UserUploadViewController.m
 //  RateItWashU
 //
-//  Created by Matt Bullock on 4/23/14.
+//  Created by Matt Bulloc/Users/Matt/Documents/projects/spotter/CampusSpotter/RateItWashU/UserUploadViewController.mk on 4/23/14.
 //
 //
 
@@ -26,7 +26,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [_name resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
