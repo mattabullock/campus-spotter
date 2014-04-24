@@ -32,8 +32,16 @@
 
 - (void)viewDidLoad
 {
-    actionSheet = [[UIActionSheet alloc] initWithTitle:@"Categories" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Bathrooms", @"Food", @"Study Spots",nil];
-    categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", nil];
+    categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", @"Landmarks",@"Dorms", nil];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@"Categories"
+                                              delegate:self cancelButtonTitle:nil
+                                destructiveButtonTitle:nil
+                                     otherButtonTitles:nil];
+    for (NSString* category in categories) {
+        [actionSheet addButtonWithTitle:category];
+    }
+    [actionSheet addButtonWithTitle:@"Cancel"];
+    actionSheet.cancelButtonIndex = [categories count];
     [actionSheet setBounds:CGRectMake(0,0,320, 610)];
 	PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     [query whereKey:@"CategoryNumber" equalTo:@1];
@@ -86,19 +94,11 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-    if(buttonIndex == 0) {
-        [query whereKey:@"CategoryNumber" equalTo:@1]; //bathroom
+    if(buttonIndex < categories.count) {
+        [query whereKey:@"CategoryNumber" equalTo:@(buttonIndex)];
         MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
         [mapViewC.selectedInfoWindow removeFromSuperview];
-    } else if(buttonIndex == 1) {
-        [query whereKey:@"CategoryNumber" equalTo:@2]; //food
-        MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
-        [mapViewC.selectedInfoWindow removeFromSuperview];
-    } else if(buttonIndex == 2) {
-        [query whereKey:@"CategoryNumber" equalTo:@3]; //study spot
-        MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
-        [mapViewC.selectedInfoWindow removeFromSuperview];
-    } else { //
+    } else {
         return;
     }
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

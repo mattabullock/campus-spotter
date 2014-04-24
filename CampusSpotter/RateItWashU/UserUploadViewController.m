@@ -68,7 +68,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component{
-    self.category = @(row + 1);
+    self.category = @(row);
 }
 
 -(void)imagePickerController:
