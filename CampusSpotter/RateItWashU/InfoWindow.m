@@ -21,7 +21,7 @@
 - (void)getRating
 {
     int avgRating = 0;
-    avgRating = (int)data[@"AvgRating"];
+    avgRating = [data[@"AvgRating"] intValue];
     for (int i = 0; i < 5; i++) {
         UIImageView * currentStar = [stars objectAtIndex:i];
         currentStar.image = [UIImage imageNamed:@"starOff.png"];
