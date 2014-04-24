@@ -69,7 +69,7 @@
     if ([[segue identifier] isEqualToString:@"mapToDetails"])
     {
         // Get reference to the destination view controller
-        NSLog(@"%@",selectedMarker.parseData);
+//        NSLog(@"%@",selectedMarker.parseData);
         [[segue destinationViewController] setItem:selectedMarker.parseData];
     }
 }
