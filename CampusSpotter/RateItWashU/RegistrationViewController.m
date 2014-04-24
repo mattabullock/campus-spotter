@@ -36,8 +36,6 @@
 
 - (void)viewDidLoad
 {
-    username.backgroundColor = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f];
-    password.backgroundColor = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
