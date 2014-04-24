@@ -41,6 +41,7 @@
     for (NSString* category in categories) {
         [actionSheet addButtonWithTitle:category];
     }
+    self.navigationItem.title = categories[0];
     [actionSheet addButtonWithTitle:@"Cancel"];
     actionSheet.cancelButtonIndex = [categories count];
     [actionSheet setBounds:CGRectMake(0,0,320, 610)];
@@ -101,6 +102,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     if(buttonIndex < categories.count) {
         [query whereKey:@"CategoryNumber" equalTo:@(buttonIndex)];
+        self.navigationItem.title = categories[buttonIndex];
         currCategory = buttonIndex;
         MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
         [mapViewC.selectedInfoWindow removeFromSuperview];

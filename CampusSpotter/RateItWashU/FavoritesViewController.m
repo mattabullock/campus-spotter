@@ -40,12 +40,8 @@
 }
 
 -(void)updateFavorites:(id)sender {
-    [((MainTabBarController*)self.tabBarController) updateList];
+    [((MainTabBarController*)self.tabBarController) updateFavorites];
     [(UIRefreshControl *)sender endRefreshing];
-}
-
--(void)print_Message {
-    NSLog(@"Eh up, someone just pressed the button!");
 }
 
 - (void)didReceiveMemoryWarning
