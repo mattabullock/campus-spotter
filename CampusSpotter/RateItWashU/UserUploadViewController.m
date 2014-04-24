@@ -34,7 +34,7 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
-    categories = ((MainTabBarController*)self.tabBarController).categories;
+    categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", @"Landmarks",@"Dorms", nil];
     self.category = @1;
 }
 
@@ -72,10 +72,11 @@
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 44)];
-    label.backgroundColor = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f];
-    label.textColor = [UIColor colorWithRed:159/255.0f green:238/255.0f blue:0/255.0f alpha:1.0f];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, pickerView.frame.size.width, 30)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor colorWithRed:224/255.0f green:11/255.0f blue:11/255.0f alpha:1.0f];
     label.text = [categories objectAtIndex:row];
+    label.textAlignment = NSTextAlignmentCenter;
     return label;
 }
 
