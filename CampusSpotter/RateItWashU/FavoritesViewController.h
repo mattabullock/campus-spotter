@@ -15,6 +15,6 @@
 @interface FavoritesViewController : UITableViewController <UpdateListener>
 
 @property PFCell *clickedCell;
-@property NSMutableArray *favorites;
+@property NSArray *favorites;
 
 @end

@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        fave = false;
     }
     return self;
 }
@@ -69,13 +69,13 @@
             if (faves == nil) {
                 faves = [[NSMutableArray alloc] init];
             }
-            if (fave) {
+            if (!fave) {
                 [faves addObject:item];
-                [addToFavs setImage:[UIImage imageNamed:@"starOff.png"] forState:UIControlStateNormal];
+                [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
             }
             else {
                 [faves removeObject:item];
-                [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
+                [addToFavs setImage:[UIImage imageNamed:@"starOff.png"] forState:UIControlStateNormal];
             }
             object[@"Favorites"] = faves;
             [object saveInBackground];

@@ -40,7 +40,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %lu places.", (unsigned long)objects.count);
+            NSLog(@"Places -- successfully retrieved %lu places.", (unsigned long)objects.count);
             places = objects;
             [self sendUpdate];
         } else {
@@ -50,17 +50,19 @@
     }];
     
     PFQuery *favQuery = [PFUser query];
+    [favQuery includeKey:@"Favorites"];
     [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
-    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [favQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             // The find succeeded.
-            NSLog(@"Successfully retrieved %lu places.", ((NSMutableArray*)object[@"Favorites"]).count);
-            favorites = object[@"Favorites"];
+            NSLog(@"Favorites -- successfully retrieved %lu places.", (unsigned long)objects.count);
+            favorites = objects[0][@"Favorites"];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -114,7 +116,6 @@
 }
 
 - (void) sendUpdate {
-    NSLog(@"i hate you all");
     id <UpdateListener> lvc = [[self viewControllers] objectAtIndex:0];
     if ([lvc conformsToProtocol:@protocol(UpdateListener)]) {
         [lvc changeCategory];
