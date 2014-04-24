@@ -21,10 +21,8 @@
 
 - (void)viewDidLoad
 {
-    
     self.title = @"List";
     places = ((MainTabBarController*)self.tabBarController).places;
-    
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.

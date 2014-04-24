@@ -103,6 +103,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSLog(@"%@", self.name.text);
     NSLog(@"%@", self.category);
     NSLog(@"%@", self.uploadImg);
+    if (self.name.text == NULL ||
+        self.uploadImg == NULL)
+    {
+        NSLog(@"dumb dumb\n");
+        return;
+    }
     PFObject *submission = [PFObject objectWithClassName:@"Item"];
     submission[@"CategoryNumber"] = self.category;
     submission[@"Location"] = geo;

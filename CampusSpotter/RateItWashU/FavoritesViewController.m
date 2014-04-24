@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad
 {
-    
+    self.title = @"Favorites";
     favorites = ((MainTabBarController*)self.tabBarController).favorites;
     [super viewDidLoad];
     
