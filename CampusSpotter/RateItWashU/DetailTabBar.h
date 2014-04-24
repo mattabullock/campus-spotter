@@ -16,4 +16,5 @@
 @property (strong,nonatomic) NSArray *comments;
 @property (weak, nonatomic) IBOutlet UIButton *addToFavs;
 @property (strong,nonatomic) NSString *test;
+- (void) updateContent;
 @end

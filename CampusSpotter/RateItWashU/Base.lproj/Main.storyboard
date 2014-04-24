@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ho-t9-Td7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ho-t9-Td7">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -599,7 +599,20 @@
         <scene sceneID="ZN5-vB-egb">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="e1c-jB-rUR" customClass="DetailTabBar" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Iya-gg-hjp"/>
+                    <navigationItem key="navigationItem" id="Iya-gg-hjp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="kcb-HU-vuO">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9J4-Xp-weM">
+                                <rect key="frame" x="272" y="6" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="starOff.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="favesClicked:" destination="e1c-jB-rUR" eventType="touchUpInside" id="5o1-02-V4c"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GXe-is-L0v">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -607,6 +620,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="addToFavs" destination="9J4-Xp-weM" id="a78-jk-NA7"/>
                         <segue destination="6ie-U8-ZfR" kind="relationship" relationship="viewControllers" id="4L6-gA-FqG"/>
                         <segue destination="dSf-nU-lWO" kind="relationship" relationship="viewControllers" id="NE2-14-nG5"/>
                         <segue destination="oWt-aY-gUc" kind="relationship" relationship="viewControllers" id="Gia-sG-SEU"/>

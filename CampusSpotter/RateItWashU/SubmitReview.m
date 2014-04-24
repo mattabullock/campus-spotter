@@ -74,8 +74,12 @@
     testObject[@"comment"] = comment.text;
     testObject[@"rating"] = [NSNumber numberWithInt:currentRating];
     testObject[@"item"] = item;
-    testObject[@"image"] = uploadedImage;
-    [testObject saveInBackground];
+    if (uploadedImage != NULL) {
+        testObject[@"image"] = uploadedImage;
+    }
+    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [parent updateContent];
+    }];
     
     [comment setText:@""];
     [commentTitle setText: @""];
