@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -458,7 +458,23 @@
         <scene sceneID="ZN5-vB-egb">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="e1c-jB-rUR" customClass="DetailTabBar" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Iya-gg-hjp"/>
+                    <navigationItem key="navigationItem" id="Iya-gg-hjp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0rj-tt-tQx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6xr-qN-sqC">
+                                <rect key="frame" x="272" y="6" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="starOff.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="favesClicked:" destination="e1c-jB-rUR" eventType="touchUpInside" id="rk5-Qo-5Cg"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="favesClicked:" destination="e1c-jB-rUR" id="zp2-du-Wag"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GXe-is-L0v">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -466,10 +482,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <outlet property="addToFavs" destination="6xr-qN-sqC" id="jHo-yX-yte"/>
                         <segue destination="6ie-U8-ZfR" kind="relationship" relationship="viewControllers" id="4L6-gA-FqG"/>
                         <segue destination="dSf-nU-lWO" kind="relationship" relationship="viewControllers" id="NE2-14-nG5"/>
                         <segue destination="oWt-aY-gUc" kind="relationship" relationship="viewControllers" id="Gia-sG-SEU"/>
-                        <segue destination="4PR-OZ-Z07" kind="relationship" relationship="viewControllers" id="RMT-Hb-BjG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkg-Ri-fdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -575,41 +591,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="all-ZC-ACo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047" y="556"/>
-        </scene>
-        <!--Collection View Controller - Item-->
-        <scene sceneID="kbU-dP-fra">
-            <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="4PR-OZ-Z07" sceneMemberID="viewController">
-                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="DVc-la-d5P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HTr-od-i4E">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XAt-he-N3P">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="4PR-OZ-Z07" id="xKs-Lc-ido"/>
-                            <outlet property="delegate" destination="4PR-OZ-Z07" id="GWe-dN-Hnq"/>
-                        </connections>
-                    </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Eyo-oi-KCu"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fzd-f1-pdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="607" y="1816"/>
         </scene>
         <!--Submit Review - Write Review-->
         <scene sceneID="oWl-HR-Rk3">

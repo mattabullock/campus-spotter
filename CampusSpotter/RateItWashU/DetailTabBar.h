@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface DetailTabBar : UITabBarController
+@interface DetailTabBar : UITabBarController {
+    BOOL fave;
+}
 @property (strong,nonatomic) PFObject *item;
 @property (strong,nonatomic) NSArray *comments;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addToFavs;
+@property (weak, nonatomic) IBOutlet UIButton *addToFavs;
 @property (strong,nonatomic) NSString *test;
 @end
