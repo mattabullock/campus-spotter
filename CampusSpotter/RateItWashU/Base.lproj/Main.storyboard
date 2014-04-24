@@ -945,8 +945,8 @@
         <image name="message.png" width="30" height="30"/>
         <image name="nil" width="500" height="218"/>
         <image name="pencil.png" width="30" height="30"/>
-        <image name="starOff.png" width="53" height="53"/>
-        <image name="starOn.png" width="53" height="53"/>
+        <image name="starOff.png" width="120" height="120"/>
+        <image name="starOn.png" width="120" height="120"/>
         <image name="text-left.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
