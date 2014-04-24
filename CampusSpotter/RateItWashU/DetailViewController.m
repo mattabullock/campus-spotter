@@ -69,7 +69,6 @@
     } else {
         avgRating = 0;
     }
-    NSLog(@"Avg rating: %d", avgRating);
     for (int i = 0; i < 5; i++) {
         UIImageView * currentStar = [stars objectAtIndex:i];
         currentStar.image = [UIImage imageNamed:@"starOff.png"];

@@ -89,6 +89,18 @@
     }
     [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [parent updateContent];
+        NSArray * comments = [parent comments];
+        int avgRating = 0;
+        for (PFObject * comment2 in comments) {
+            avgRating += [comment2[@"rating"] intValue];
+        }
+        if(comments.count > 0) {
+            avgRating = avgRating/comments.count;
+        } else {
+            avgRating = 0;
+        }
+        item[@"AvgRating"] = [NSNumber numberWithInt:avgRating];
+        [item saveInBackground];
     }];
     
     [comment setText:@""];
