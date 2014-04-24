@@ -20,19 +20,8 @@
 
 - (void)getRating
 {
-    PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
-    [query2 whereKey:@"item" equalTo:data];
-    NSArray* comments = [query2 findObjects];
     int avgRating = 0;
-    for (PFObject * comment in comments) {
-        avgRating += [comment[@"rating"] intValue];
-    }
-    if(comments.count > 0) {
-        avgRating = avgRating/comments.count;
-    } else {
-        avgRating = 0;
-    }
-    NSLog(@"Avg rating: %d", avgRating);
+    avgRating = (int)data[@"AvgRating"];
     for (int i = 0; i < 5; i++) {
         UIImageView * currentStar = [stars objectAtIndex:i];
         currentStar.image = [UIImage imageNamed:@"starOff.png"];
