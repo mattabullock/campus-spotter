@@ -24,7 +24,6 @@
     [self.navigationController setNavigationBarHidden:NO];
     [self.navigationItem setHidesBackButton:YES];
     
-    self.title = @"List";
     favorites = ((MainTabBarController*)self.tabBarController).favorites;
     
     [super viewDidLoad];

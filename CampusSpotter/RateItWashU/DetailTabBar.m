@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        fave = false;
     }
     return self;
 }
@@ -42,11 +42,13 @@
     [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         if (!error) {
             NSMutableArray * faves = (NSMutableArray *)object[@"Favorites"];
-            NSLog(@"%d", faves.count);
-            NSLog(@"%@", faves);
-            if (faves != nil && [faves containsObject:item]) {
-                NSLog(@"changing pic");
-                [addToFavs setImage:[UIImage imageNamed:@"starOn.png"]];
+            if (faves != nil) {
+                for (PFObject * obj in faves) {
+                    if ([[obj objectId] isEqualToString:[item objectId]]) {
+                        fave = true;
+                        [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
+                    }
+                }
             }
         }
     }];
@@ -67,9 +69,17 @@
             if (faves == nil) {
                 faves = [[NSMutableArray alloc] init];
             }
-            [faves addObject:item];
+            if (!fave) {
+                [faves addObject:item];
+                [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
+            }
+            else {
+                [faves removeObject:item];
+                [addToFavs setImage:[UIImage imageNamed:@"starOff.png"] forState:UIControlStateNormal];
+            }
             object[@"Favorites"] = faves;
             [object saveInBackground];
+            fave = !fave;
         }
     }];
     
