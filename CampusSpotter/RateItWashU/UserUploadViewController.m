@@ -130,6 +130,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
         if (!error) {
             NSLog(@"Submitted!");
             [((MainTabBarController*)self.tabBarController) sendUpdate];
+            [self.navigationController popViewControllerAnimated:YES];
         }
         else{
             // Log details of the failure
