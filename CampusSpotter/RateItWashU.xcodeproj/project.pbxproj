@@ -22,6 +22,7 @@
 		C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4518F3C722008D9505 /* MapViewController.m */; };
 		C956BE3E18F36BE9008D9505 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C956BE3D18F36BE9008D9505 /* MapKit.framework */; };
 		C956BE4218F3BAF4008D9505 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4118F3BAF4008D9505 /* TempViewController.m */; };
+		C96D33EE1908B31E0025F913 /* spottr.png in Resources */ = {isa = PBXBuildFile; fileRef = C96D33ED1908B31E0025F913 /* spottr.png */; };
 		C972653F18FCAB21008FBF6F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972653E18FCAB21008FBF6F /* GoogleMaps.framework */; };
 		C972654118FCAC77008FBF6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972654018FCAC77008FBF6F /* AVFoundation.framework */; };
 		C972654318FCAC89008FBF6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972654218FCAC89008FBF6F /* CoreData.framework */; };
@@ -103,6 +104,7 @@
 		C956BE4118F3BAF4008D9505 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		C956BE4418F3C722008D9505 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C956BE4518F3C722008D9505 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C96D33ED1908B31E0025F913 /* spottr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spottr.png; sourceTree = "<group>"; };
 		C972653E18FCAB21008FBF6F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		C972654018FCAC77008FBF6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C972654218FCAC89008FBF6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -474,6 +476,7 @@
 		C9A95FE718F4631200832180 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C96D33ED1908B31E0025F913 /* spottr.png */,
 				22ED3D7D18FDD60A00A5EA1A /* starOn.png */,
 				22E9A4D018FF6E7E00D31322 /* pencil.png */,
 				22E9A4D418FF6EEE00D31322 /* text-left.png */,
@@ -584,6 +587,7 @@
 				22ED3D7F18FDD60A00A5EA1A /* starOn.png in Resources */,
 				22E9A4D318FF6ED200D31322 /* message.png in Resources */,
 				C991632B18FF8C170002E147 /* InfoWindow.xib in Resources */,
+				C96D33EE1908B31E0025F913 /* spottr.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
