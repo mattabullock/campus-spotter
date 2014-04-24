@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -134,25 +134,6 @@
             </objects>
             <point key="canvasLocation" x="-2077" y="543"/>
         </scene>
-        <!--Favorites View Controller - Favorites-->
-        <scene sceneID="DRz-MQ-3eN">
-            <objects>
-                <viewController id="4Zg-cf-nXF" customClass="FavoritesViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jlZ-qE-gmT"/>
-                        <viewControllerLayoutGuide type="bottom" id="E9X-5p-Ypj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rxp-FE-94M" customClass="UITableView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="iNf-ws-Nu7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pfb-FK-BH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-472" y="-1140"/>
-        </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="5eV-MI-ORi">
             <objects>
@@ -173,14 +154,43 @@
                     <connections>
                         <segue destination="hJI-i9-ZlA" kind="relationship" relationship="viewControllers" id="Bpa-5c-VvZ"/>
                         <segue destination="7zJ-Om-wXi" kind="relationship" relationship="viewControllers" id="Uta-Ny-EGZ"/>
-                        <segue destination="4Zg-cf-nXF" kind="relationship" relationship="viewControllers" id="nod-vD-mfg"/>
                         <segue destination="dq2-Sw-uY9" kind="relationship" relationship="viewControllers" id="Xtm-84-Mno"/>
                         <segue destination="w9J-oZ-sXS" kind="relationship" relationship="viewControllers" id="LLw-sF-4Op"/>
+                        <segue destination="uwA-mt-w1d" kind="relationship" relationship="viewControllers" id="QfL-UH-Amn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rh-Ts-ikz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1152" y="212"/>
+        </scene>
+        <!--Favorites View Controller - Favorites-->
+        <scene sceneID="5W1-XW-jHp">
+            <objects>
+                <tableViewController id="uwA-mt-w1d" customClass="FavoritesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UEF-UT-oaL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="u5B-lL-2zY">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5B-lL-2zY" id="fNT-a1-mqY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uwA-mt-w1d" id="Mdg-UN-F98"/>
+                            <outlet property="delegate" destination="uwA-mt-w1d" id="yA1-aN-AfK"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="gNO-5d-nrS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPy-K8-gVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-998" y="-793"/>
         </scene>
         <!--List View Controller - Categories-->
         <scene sceneID="Vmf-j7-5Wt">
@@ -599,7 +609,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzd-f1-pdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="1776"/>
+            <point key="canvasLocation" x="607" y="1816"/>
         </scene>
         <!--Submit Review - Write Review-->
         <scene sceneID="oWl-HR-Rk3">
@@ -761,7 +771,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GBE-cw-CFT"/>
+        <segue reference="Suz-D6-bd3"/>
         <segue reference="CNk-Gm-k6x"/>
     </inferredMetricsTieBreakers>
 </document>

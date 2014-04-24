@@ -49,7 +49,18 @@
         }
     }];
     
-    PFQuery *favQuery = [PFQuery queryWithClassName:@"User"];
+    PFQuery *favQuery = [PFUser query];
+    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
+    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu places.", ((NSMutableArray*)object[@"Favorites"]).count);
+            favorites = object[@"Favorites"];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
