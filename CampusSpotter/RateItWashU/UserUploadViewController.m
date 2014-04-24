@@ -35,7 +35,7 @@
     
     [self.view addGestureRecognizer:tap];
     categories = [[NSArray alloc] initWithObjects:@"Bathrooms",@"Food",@"Study Spots", @"Landmarks",@"Dorms", nil];
-    self.category = @1;
+    self.category = @0;
 }
 
 -(void)dismissKeyboard {
