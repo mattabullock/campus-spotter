@@ -48,6 +48,8 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    PFQuery *favQuery = [PFQuery queryWithClassName:@"User"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -101,6 +103,7 @@
 }
 
 - (void) sendUpdate {
+    NSLog(@"i hate you all");
     id <UpdateListener> lvc = [[self viewControllers] objectAtIndex:0];
     if ([lvc conformsToProtocol:@protocol(UpdateListener)]) {
         [lvc changeCategory];
