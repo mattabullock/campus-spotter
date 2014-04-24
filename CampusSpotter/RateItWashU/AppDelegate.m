@@ -16,6 +16,8 @@
                   clientKey:@"pqLMzCfhni4daiKJhaB3Mkc7q85jxBoDlKmo54jA"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [GMSServices provideAPIKey:@"AIzaSyAWdu9tpX23FSBRSLY7KQxSxgYFQfMUNw4"];
+    [[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     return YES;
 }
 							

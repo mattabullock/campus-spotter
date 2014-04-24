@@ -21,11 +21,8 @@
 
 - (void)viewDidLoad
 {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationItem setHidesBackButton:YES];
     
     favorites = ((MainTabBarController*)self.tabBarController).favorites;
-    
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.

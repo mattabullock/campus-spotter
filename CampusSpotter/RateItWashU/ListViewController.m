@@ -21,13 +21,9 @@
 
 - (void)viewDidLoad
 {
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationItem setHidesBackButton:YES];
     
     self.title = @"List";
     places = ((MainTabBarController*)self.tabBarController).places;
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(print_Message)];
     
     [super viewDidLoad];
     
@@ -36,10 +32,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
--(void)print_Message {
-    NSLog(@"Eh up, someone just pressed the button!");
 }
 
 - (void)didReceiveMemoryWarning
