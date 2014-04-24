@@ -106,7 +106,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     if ([self.name.text  isEqual:@""] ||
         self.uploadImg == NULL)
     {
-        NSLog(@"dumb dumb\n"); // fixme
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Missing Details" message:@"You must specify all of the details for this location." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+        [alert show];
         return;
     }
     PFObject *submission = [PFObject objectWithClassName:@"Item"];
