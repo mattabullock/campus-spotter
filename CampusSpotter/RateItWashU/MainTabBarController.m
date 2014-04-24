@@ -73,7 +73,7 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f] } forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:159/255.0f green:238/255.0f blue:0/255.0f alpha:1.0f] } forState:UIControlStateSelected];
-    
+    self.tabBar.tintColor = [UIColor colorWithRed:159/255.0f green:238/255.0f blue:0/255.0f alpha:1.0f];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.

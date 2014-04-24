@@ -103,10 +103,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSLog(@"%@", self.name.text);
     NSLog(@"%@", self.category);
     NSLog(@"%@", self.uploadImg);
-    if (self.name.text == NULL ||
+    if ([self.name.text  isEqual:@""] ||
         self.uploadImg == NULL)
     {
-        NSLog(@"dumb dumb\n");
+        NSLog(@"dumb dumb\n"); // fixme
         return;
     }
     PFObject *submission = [PFObject objectWithClassName:@"Item"];
