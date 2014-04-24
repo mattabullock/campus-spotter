@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "DetailTabBar.h"
 
-@interface SubmitReview : UIViewController {
+@interface SubmitReview : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     int currentRating;
     PFFile * uploadedImage;
 }
