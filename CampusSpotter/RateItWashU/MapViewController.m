@@ -36,7 +36,7 @@
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:38.648769
                                                             longitude:-90.308676
                                                                  zoom:17];
-    mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
     mapView.delegate = self;
     
     [mapView addObserver:self forKeyPath:@"myLocation" options:NSKeyValueObservingOptionNew context:NULL];
@@ -47,7 +47,7 @@
     mapView.settings.myLocationButton = YES;
     mapView.settings.compassButton = YES;
     
-    self.view = mapView;
+    [self.view insertSubview:mapView atIndex:0];
     
     [self loadMarkers];
     
@@ -127,6 +127,13 @@
                         change:(NSDictionary *)change
                        context:(void *)context {
     NSLog(@"Things are %@", mapView.settings.myLocationButton ? @"great!" : @"AWFUL");
+}
+
+- (IBAction)centerOnUser:(id)sender {
+    CLLocation *location = mapView.myLocation;
+    if (location) {
+        [mapView animateToLocation:location.coordinate];
+    }
 }
 
 /*
