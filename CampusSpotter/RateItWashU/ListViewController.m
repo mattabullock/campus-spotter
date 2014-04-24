@@ -25,11 +25,23 @@
     places = ((MainTabBarController*)self.tabBarController).places;
     [super viewDidLoad];
     
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    
+    [refresh addTarget:self action:@selector(updateList:) forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:refresh];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)updateList:(id)sender {
+    [((MainTabBarController*)self.tabBarController) updateList];
+    [(UIRefreshControl *)sender endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning

@@ -20,6 +20,7 @@
 @synthesize actionSheet;
 @synthesize places;
 @synthesize favorites;
+@synthesize currCategory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -100,6 +101,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Item"];
     if(buttonIndex < categories.count) {
         [query whereKey:@"CategoryNumber" equalTo:@(buttonIndex)];
+        currCategory = buttonIndex;
         MapViewController *mapViewC = [[self viewControllers] objectAtIndex:1];
         [mapViewC.selectedInfoWindow removeFromSuperview];
     } else {
@@ -119,6 +121,38 @@
     
 }
 
+-(void)updateList {
+    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
+    [query whereKey:@"CategoryNumber" equalTo:@(currCategory)];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu places.", (unsigned long)objects.count);
+            places = objects;
+            [self sendUpdate];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+-(void)updateFavorites {
+    PFQuery *favQuery = [PFUser query];
+    [favQuery includeKey:@"Favorites"];
+    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
+    [favQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Favorites -- successfully retrieved %lu places.", (unsigned long)objects.count);
+            favorites = objects[0][@"Favorites"];
+            [self sendUpdate];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
 - (void) sendUpdate {
     id <UpdateListener> lvc = [[self viewControllers] objectAtIndex:0];
     if ([lvc conformsToProtocol:@protocol(UpdateListener)]) {
@@ -127,6 +161,10 @@
     id <UpdateListener> mvc = [[self viewControllers] objectAtIndex:1];
     if ([mvc conformsToProtocol:@protocol(UpdateListener)]) {
         [mvc changeCategory];
+    }
+    id <UpdateListener> fvc = [[self viewControllers] objectAtIndex:2];
+    if ([fvc conformsToProtocol:@protocol(UpdateListener)]) {
+        [fvc changeCategory];
     }
 }
 - (IBAction)chooseCategory:(id)sender {
