@@ -17,10 +17,13 @@
 @interface MainTabBarController : UITabBarController <UIActionSheetDelegate>
 
 -(void)sendUpdate;
+-(void)updateList;
+-(void)updateFavorites;
 
 @property (strong,nonatomic) NSArray *categories;
 @property (strong,nonatomic) UIActionSheet *actionSheet;
 @property (strong,nonatomic) NSArray *places;
 @property (strong,nonatomic) NSArray *favorites;
+@property NSInteger currCategory;
 
 @end
