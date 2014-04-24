@@ -37,8 +37,16 @@
                                                             longitude:-90.308676
                                                                  zoom:17];
     mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView.settings.myLocationButton = YES;
     mapView.delegate = self;
+    
+    [mapView addObserver:self forKeyPath:@"myLocation" options:NSKeyValueObservingOptionNew context:NULL];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        mapView.myLocationEnabled = YES;
+    });
+    
+    mapView.settings.myLocationButton = YES;
+    mapView.settings.compassButton = YES;
+    
     self.view = mapView;
     
     [self loadMarkers];
@@ -112,6 +120,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    NSLog(@"Things are %@", mapView.settings.myLocationButton ? @"great!" : @"AWFUL");
 }
 
 /*
