@@ -12,6 +12,7 @@
 
 @interface SubmitReview : UIViewController {
     int currentRating;
+    PFFile * uploadedImage;
 }
 @property (weak, nonatomic) IBOutlet UIButton *star1;
 @property (weak, nonatomic) IBOutlet UIButton *star2;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *comment;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
 @property (weak, nonatomic) IBOutlet UITextField *commentTitle;
+
 
 
 @end

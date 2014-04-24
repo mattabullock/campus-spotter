@@ -35,6 +35,10 @@
     [self updateDisplay];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.tabBarItem setTitle: @"Details"];
+    
+    pvc = [[UIPageViewController alloc] init];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +77,26 @@
             currentStar.image = [UIImage imageNamed:@"starOn.png"];
         }
     }
+    
+    NSMutableArray * pics = [[NSMutableArray alloc] init];
+    //Get all of the images
+    for (PFObject * comment in comments) {
+        PFFile * image = comment[@"image"];
+        if (comment[@"image"] != nil) {
+            [image getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+                if (!error) {
+                    UIImageView *newImageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+                    [pics addObject:newImageView];
+                }
+            }];
+        }
+    }
+    
+    [pvc setViewControllers:pics direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    
+    pvc.view.frame = self.view.frame;
+    [self.view addSubview:pvc.view];
+//    [self addChildViewController:pvc];
     
 }
 /*

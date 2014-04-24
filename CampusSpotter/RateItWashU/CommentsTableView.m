@@ -159,6 +159,7 @@
     [detail setComment: comment[@"comment"]];
     [detail setCommentTitle: comment[@"commentTitle"]];
     [detail setRating: [comment[@"rating"] intValue]];
+    [detail setImage: comment[@"image"]];
 }
 
 

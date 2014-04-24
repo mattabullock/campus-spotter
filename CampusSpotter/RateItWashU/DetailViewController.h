@@ -13,6 +13,7 @@
 @interface DetailViewController : UIViewController {
     PFObject * item;
     NSArray * stars;
+    UIPageViewController * pvc;
 }
 @property PFObject * item;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

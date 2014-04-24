@@ -13,6 +13,7 @@
 @end
 
 @implementation CommentDetail
+@synthesize image, imageView;
 @synthesize author, comment, commentTitle;
 @synthesize rating;
 @synthesize commentLabel, titleLabel, authorLabel;
@@ -38,7 +39,8 @@
     titleLabel.numberOfLines = 0;
     authorLabel.text = [NSString stringWithFormat:@"Written by %@", author];
     titleLabel.text = commentTitle;
-    commentLabel.text = comment;
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    
     
     star1.image = [UIImage imageNamed:@"starOff.png"];
     star2.image = [UIImage imageNamed:@"starOff.png"];
@@ -62,7 +64,29 @@
         star5.image = [UIImage imageNamed:@"starOn.png"];
     }
     
-	// Do any additional setup after loading the view.
+    
+    commentLabel = [[UILabel alloc] initWithFrame: CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y + imageView.frame.size.height + 8, imageView.frame.size.width, imageView.frame.size.height)];
+    commentLabel.text = comment;
+    commentLabel.numberOfLines = 0;
+    
+	//Display picture if possible
+    [image getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            NSLog(@"no error");
+            UIImage *image2 = [UIImage imageWithData:imageData];
+            [imageView setImage: image2];
+        }
+    }];
+
+    if (image == nil) {
+        commentLabel.frame = imageView.frame;
+        NSLog(@"MOVING");
+        [imageView setHidden:YES];
+    }
+    
+    [commentLabel sizeToFit];
+    [self.view addSubview:commentLabel];
+    
 }
 
 - (void)didReceiveMemoryWarning

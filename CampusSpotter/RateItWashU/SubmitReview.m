@@ -74,6 +74,7 @@
     testObject[@"comment"] = comment.text;
     testObject[@"rating"] = [NSNumber numberWithInt:currentRating];
     testObject[@"item"] = item;
+    testObject[@"image"] = uploadedImage;
     [testObject saveInBackground];
     
     [comment setText:@""];
@@ -130,6 +131,36 @@
     [star5 setImage:starOn forState:UIControlStateNormal];
     currentRating = 5;
 }
+- (IBAction)uploadImage:(id)sender {
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeSavedPhotosAlbum] == YES){
+        // Create image picker controller
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        
+        // Set source to saved photos
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+        
+        // Delegate is self
+        imagePicker.delegate = self;
+        
+        // Show image picker
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+    {
+        //Access theh image
+        UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+        // Dismiss controller
+        [picker dismissViewControllerAnimated:YES completion:nil];
+    
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.75f);
+        
+        uploadedImage = [PFFile fileWithName:@"Image.jpg" data:imageData];
+}
+
 
 
 @end
