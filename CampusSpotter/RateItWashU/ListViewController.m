@@ -76,6 +76,7 @@
     if (cell == nil) {
         
         cell = [[PFCell alloc] initWithPFObj:[places objectAtIndex:indexPath.row]];
+        cell.textLabel.textColor = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f];
         
     }
     
