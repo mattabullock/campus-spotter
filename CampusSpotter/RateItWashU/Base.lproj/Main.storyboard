@@ -210,7 +210,7 @@
             </objects>
             <point key="canvasLocation" x="-1152" y="212"/>
         </scene>
-        <!--Favorites View Controller - Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="5W1-XW-jHp">
             <objects>
                 <tableViewController id="uwA-mt-w1d" customClass="FavoritesViewController" sceneMemberID="viewController">
@@ -233,7 +233,7 @@
                             <outlet property="delegate" destination="uwA-mt-w1d" id="yA1-aN-AfK"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="gNO-5d-nrS"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="gNO-5d-nrS"/>
                     <connections>
                         <segue destination="e1c-jB-rUR" kind="push" identifier="favToDetail" id="Jf0-Pb-jCt"/>
                     </connections>
@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="-472" y="-1017"/>
         </scene>
-        <!--List View Controller - Categories-->
+        <!--List View Controller-->
         <scene sceneID="Vmf-j7-5Wt">
             <objects>
                 <tableViewController storyboardIdentifier="categories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hJI-i9-ZlA" customClass="ListViewController" sceneMemberID="viewController">
@@ -265,7 +265,7 @@
                             <outlet property="delegate" destination="hJI-i9-ZlA" id="ocr-OY-k02"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Categories" id="lcj-qB-ib8"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="lcj-qB-ib8"/>
                     <connections>
                         <segue destination="e1c-jB-rUR" kind="push" identifier="listtodetail" id="Suz-D6-bd3"/>
                     </connections>
@@ -486,7 +486,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H16-3h-DWV">
                                 <rect key="frame" x="260" y="307" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon.jpg">
+                                <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="button_my_location.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -496,7 +497,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="vHS-fO-3sQ"/>
+                    <tabBarItem key="tabBarItem" tag="2" systemItem="favorites" id="vHS-fO-3sQ"/>
                     <connections>
                         <segue destination="e1c-jB-rUR" kind="push" identifier="mapToDetails" id="GBE-cw-CFT"/>
                     </connections>
@@ -864,7 +865,7 @@
     </scenes>
     <resources>
         <image name="7F356A5C-0D3D-49AA-B0D6-4B4DAF24B993.png" width="500" height="218"/>
-        <image name="icon.jpg" width="92" height="92"/>
+        <image name="button_my_location.png" width="46" height="46"/>
         <image name="message.png" width="30" height="30"/>
         <image name="nil" width="500" height="218"/>
         <image name="pencil.png" width="30" height="30"/>
