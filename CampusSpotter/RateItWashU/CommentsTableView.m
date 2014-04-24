@@ -164,6 +164,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
     [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows]
                           withRowAnimation:UITableViewRowAnimationNone];
 }

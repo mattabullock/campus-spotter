@@ -63,6 +63,15 @@
 }
 
 - (IBAction)submitClicked:(id)sender {
+    if (commentTitle.text.length == 0 || comment.text.length == 0) {
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Empty Field"
+                                                            message:@"Please make sure to fill out every field before submitting"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Return"
+                                                  otherButtonTitles:nil];
+        [error show];
+        return;
+    }
     PFObject *testObject = [PFObject objectWithClassName:@"Comment"];
     PFUser * currentUser = [PFUser currentUser];
     
@@ -83,6 +92,12 @@
     
     [comment setText:@""];
     [commentTitle setText: @""];
+    UIImage *starOff = [UIImage imageNamed:@"starOff.png"];
+    [star1 setImage:starOff forState:UIControlStateNormal];
+    [star2 setImage:starOff forState:UIControlStateNormal];
+    [star3 setImage:starOff forState:UIControlStateNormal];
+    [star4 setImage:starOff forState:UIControlStateNormal];
+    [star5 setImage:starOff forState:UIControlStateNormal];
 }
 
 
