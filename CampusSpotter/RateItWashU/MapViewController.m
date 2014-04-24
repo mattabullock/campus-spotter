@@ -125,9 +125,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context {
-    NSLog(@"Things are %@", mapView.settings.myLocationButton ? @"great!" : @"AWFUL");
-}
+                       context:(void *)context {}
 
 - (IBAction)centerOnUser:(id)sender {
     CLLocation *location = mapView.myLocation;

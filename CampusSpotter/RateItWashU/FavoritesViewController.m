@@ -86,7 +86,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"listtodetail"])
+    if ([[segue identifier] isEqualToString:@"favToDetail"])
     {
         // Get reference to the destination view controller
         [[segue destinationViewController] setItem:clickedCell.parseData];
@@ -142,7 +142,7 @@
     clickedCell = (PFCell*)[tableView cellForRowAtIndexPath:indexPath];
     //    NSLog(@"%@",cell.parseData); //replace "dictionary" by the name of the property you created in the subclass
     // Push the view controller.
-    [self performSegueWithIdentifier:@"listtodetail" sender:self];
+    [self performSegueWithIdentifier:@"favToDetail" sender:self];
 }
 
 

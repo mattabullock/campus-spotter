@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ho-t9-Td7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5Ho-t9-Td7">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -192,9 +192,9 @@
                     <connections>
                         <segue destination="hJI-i9-ZlA" kind="relationship" relationship="viewControllers" id="Bpa-5c-VvZ"/>
                         <segue destination="7zJ-Om-wXi" kind="relationship" relationship="viewControllers" id="Uta-Ny-EGZ"/>
+                        <segue destination="uwA-mt-w1d" kind="relationship" relationship="viewControllers" id="QfL-UH-Amn"/>
                         <segue destination="dq2-Sw-uY9" kind="relationship" relationship="viewControllers" id="Xtm-84-Mno"/>
                         <segue destination="w9J-oZ-sXS" kind="relationship" relationship="viewControllers" id="LLw-sF-4Op"/>
-                        <segue destination="uwA-mt-w1d" kind="relationship" relationship="viewControllers" id="QfL-UH-Amn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rh-Ts-ikz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -225,6 +225,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Favorites" id="gNO-5d-nrS"/>
+                    <connections>
+                        <segue destination="e1c-jB-rUR" kind="push" identifier="favToDetail" id="Jf0-Pb-jCt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPy-K8-gVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,14 +257,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Categories" id="lcj-qB-ib8"/>
-                    <navigationItem key="navigationItem" id="L8e-1K-ZUB"/>
                     <connections>
                         <segue destination="e1c-jB-rUR" kind="push" identifier="listtodetail" id="Suz-D6-bd3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrg-dS-NGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="-455"/>
+            <point key="canvasLocation" x="-178" y="-635"/>
         </scene>
         <!--User Upload View Controller - Upload-->
         <scene sceneID="Mi6-Tr-6oA">
@@ -386,16 +388,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLd-1R-URk">
-                                <rect key="frame" x="0.0" y="54" width="320" height="376"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H16-3h-DWV">
+                                <rect key="frame" x="20" y="70" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Center On Me">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="centerOnUser:" destination="7zJ-Om-wXi" eventType="touchUpInside" id="eoV-eh-abl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="vHS-fO-3sQ"/>
                     <connections>
-                        <outlet property="mapView" destination="KLd-1R-URk" id="J43-SI-52r"/>
                         <segue destination="e1c-jB-rUR" kind="push" identifier="mapToDetails" id="GBE-cw-CFT"/>
                     </connections>
                 </viewController>
@@ -774,7 +781,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="GBE-cw-CFT"/>
         <segue reference="0Bl-WV-x9b"/>
-        <segue reference="Suz-D6-bd3"/>
     </inferredMetricsTieBreakers>
 </document>
