@@ -57,7 +57,7 @@
     [selectedInfoWindow removeFromSuperview];
     selectedInfoWindow = [[[NSBundle mainBundle] loadNibNamed:@"InfoWindow" owner:self options:nil] objectAtIndex:0];
     [selectedInfoWindow.details addTarget:self action:@selector(detailsClicked) forControlEvents:UIControlEventTouchUpInside];
-    selectedInfoWindow.frame = CGRectMake(0, self.view.frame.size.height - 70 - self.tabBarController.tabBar.frame.size.height, 320, 70);
+    selectedInfoWindow.frame = CGRectMake(0, self.view.frame.size.height - 21 - self.tabBarController.tabBar.frame.size.height, 320, 70);
     selectedInfoWindow.data = marker.parseData;
     [selectedInfoWindow getRating];
     [self.view addSubview:selectedInfoWindow];
