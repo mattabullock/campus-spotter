@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        // fill in things here as needed
     }
     return self;
 }
@@ -70,6 +70,10 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f] } forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor colorWithRed:159/255.0f green:238/255.0f blue:0/255.0f alpha:1.0f] } forState:UIControlStateSelected];
+    
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
