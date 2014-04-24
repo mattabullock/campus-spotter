@@ -28,6 +28,7 @@
 		C96D33F41908C91C0025F913 /* spottricon_120px.png in Resources */ = {isa = PBXBuildFile; fileRef = C96D33F31908C91C0025F913 /* spottricon_120px.png */; };
 		C96D33F91908DD950025F913 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C96D33F81908DD950025F913 /* icon.jpg */; };
 		C96D33FB1908E7B70025F913 /* Location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C96D33FA1908E7B70025F913 /* Location@2x.png */; };
+		C96D33FD1908E9510025F913 /* Top_Charts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C96D33FC1908E9510025F913 /* Top_Charts@2x.png */; };
 		C972653F18FCAB21008FBF6F /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972653E18FCAB21008FBF6F /* GoogleMaps.framework */; };
 		C972654118FCAC77008FBF6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972654018FCAC77008FBF6F /* AVFoundation.framework */; };
 		C972654318FCAC89008FBF6F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C972654218FCAC89008FBF6F /* CoreData.framework */; };
@@ -115,6 +116,7 @@
 		C96D33F31908C91C0025F913 /* spottricon_120px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spottricon_120px.png; sourceTree = "<group>"; };
 		C96D33F81908DD950025F913 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
 		C96D33FA1908E7B70025F913 /* Location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@2x.png"; sourceTree = "<group>"; };
+		C96D33FC1908E9510025F913 /* Top_Charts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Top_Charts@2x.png"; sourceTree = "<group>"; };
 		C972653E18FCAB21008FBF6F /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		C972654018FCAC77008FBF6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C972654218FCAC89008FBF6F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -498,6 +500,7 @@
 				22ED3D8518FDF1C400A5EA1A /* brookings.jpg */,
 				22ED3D7E18FDD60A00A5EA1A /* starOff.png */,
 				C9A95FE518F4630E00832180 /* blue-cog-hi.png */,
+				C96D33FC1908E9510025F913 /* Top_Charts@2x.png */,
 				22E9A4D218FF6ED200D31322 /* message.png */,
 			);
 			name = Images;
@@ -605,6 +608,7 @@
 				22E9A4D118FF6E7E00D31322 /* pencil.png in Resources */,
 				C972655418FCB19F008FBF6F /* GoogleMaps.bundle in Resources */,
 				22ED3D7F18FDD60A00A5EA1A /* starOn.png in Resources */,
+				C96D33FD1908E9510025F913 /* Top_Charts@2x.png in Resources */,
 				22E9A4D318FF6ED200D31322 /* message.png in Resources */,
 				C991632B18FF8C170002E147 /* InfoWindow.xib in Resources */,
 				C96D33EE1908B31E0025F913 /* spottr.png in Resources */,
