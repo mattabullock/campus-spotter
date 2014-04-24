@@ -17,6 +17,7 @@
 		22ED3D8018FDD60B00A5EA1A /* starOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D7E18FDD60A00A5EA1A /* starOff.png */; };
 		22ED3D8418FDE58700A5EA1A /* SubmitReview.m in Sources */ = {isa = PBXBuildFile; fileRef = 22ED3D8318FDE58700A5EA1A /* SubmitReview.m */; };
 		22ED3D8618FDF1C400A5EA1A /* brookings.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22ED3D8518FDF1C400A5EA1A /* brookings.jpg */; };
+		22F4F0D11908F1780039CD50 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 22F4F0D01908F1780039CD50 /* check.png */; };
 		C91539EC1907A0B4008E8C0A /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91539EB1907A0B4008E8C0A /* FavoritesViewController.m */; };
 		C91539EF1907A0C5008E8C0A /* UserUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91539EE1907A0C5008E8C0A /* UserUploadViewController.m */; };
 		C92F6D4618F3CD88005721ED /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C956BE4518F3C722008D9505 /* MapViewController.m */; };
@@ -101,6 +102,7 @@
 		22ED3D8218FDE58700A5EA1A /* SubmitReview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitReview.h; sourceTree = "<group>"; };
 		22ED3D8318FDE58700A5EA1A /* SubmitReview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitReview.m; sourceTree = "<group>"; };
 		22ED3D8518FDF1C400A5EA1A /* brookings.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brookings.jpg; sourceTree = "<group>"; };
+		22F4F0D01908F1780039CD50 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		C91539EA1907A0B4008E8C0A /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
 		C91539EB1907A0B4008E8C0A /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
 		C91539ED1907A0C5008E8C0A /* UserUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserUploadViewController.h; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		C9A95FE718F4631200832180 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22F4F0D01908F1780039CD50 /* check.png */,
 				C96D33FA1908E7B70025F913 /* Location@2x.png */,
 				C96D33F81908DD950025F913 /* icon.jpg */,
 				C96D33F31908C91C0025F913 /* spottricon_120px.png */,
@@ -599,6 +602,7 @@
 				C98B465A18F3524200558EBC /* InfoPlist.strings in Resources */,
 				22E9A4D518FF6EEE00D31322 /* text-left.png in Resources */,
 				C96D33F91908DD950025F913 /* icon.jpg in Resources */,
+				22F4F0D11908F1780039CD50 /* check.png in Resources */,
 				C96D33F21908C1670025F913 /* 7F356A5C-0D3D-49AA-B0D6-4B4DAF24B993.png in Resources */,
 				C96D33F41908C91C0025F913 /* spottricon_120px.png in Resources */,
 				22ED3D8018FDD60B00A5EA1A /* starOff.png in Resources */,

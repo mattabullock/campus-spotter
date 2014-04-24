@@ -52,7 +52,11 @@
                 [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
             }
             else {
-                [faves removeObject:item];
+                for (PFObject * obj in faves) {
+                    if ([[obj objectId] isEqualToString:[item objectId]]) {
+                        [faves removeObject: obj];
+                    }
+                }
                 [addToFavs setImage:[UIImage imageNamed:@"starOff.png"] forState:UIControlStateNormal];
             }
             object[@"Favorites"] = faves;

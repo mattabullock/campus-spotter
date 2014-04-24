@@ -14,7 +14,7 @@
 
 @implementation SubmitReview
 @synthesize star1, star2, star3, star4, star5;
-@synthesize comment, commentTitle;
+@synthesize comment, commentTitle, submit;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +42,7 @@
     comment.layer.masksToBounds=YES;
     comment.layer.borderColor=[[UIColor blackColor]CGColor];
     comment.layer.borderWidth= 1.0f;
+    
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
@@ -153,6 +154,7 @@
 - (IBAction)uploadImage:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeSavedPhotosAlbum] == YES){
+        upload = sender;
         // Create image picker controller
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         
@@ -169,7 +171,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
-        //Access theh image
+        //Access the image
         UIImage *image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
     
         // Dismiss controller
@@ -178,6 +180,12 @@
         NSData *imageData = UIImageJPEGRepresentation(image, 0.75f);
         
         uploadedImage = [PFFile fileWithName:@"Image.jpg" data:imageData];
+        
+        UIImageView * check = [[UIImageView alloc] initWithFrame:CGRectMake(upload.frame.origin.x + upload.frame.size.width + 5, upload.frame.origin.y + 5, upload.frame.size.height - 10, upload.frame.size.height - 10)];
+        check.image = [UIImage imageNamed:@"check.png"];
+        check.contentMode = UIViewContentModeScaleAspectFit;
+
+        [self.view addSubview:check];
 }
 
 

@@ -13,6 +13,7 @@
 @interface SubmitReview : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     int currentRating;
     PFFile * uploadedImage;
+    UIButton * upload;
 }
 @property (weak, nonatomic) IBOutlet UIButton *star1;
 @property (weak, nonatomic) IBOutlet UIButton *star2;
