@@ -12,5 +12,6 @@
 @interface DetailTabBar : UITabBarController
 @property (strong,nonatomic) PFObject *item;
 @property (strong,nonatomic) NSArray *comments;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addToFavs;
 @property (strong,nonatomic) NSString *test;
 @end

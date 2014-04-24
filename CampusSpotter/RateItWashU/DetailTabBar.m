@@ -15,6 +15,7 @@
 @implementation DetailTabBar
 @synthesize item;
 @synthesize comments;
+@synthesize addToFavs;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,36 +30,50 @@
 {
     [super viewDidLoad];
     NSLog(@"%@",(NSString*)item[@"Title"]);
-//    PFQuery *query = [PFQuery queryWithClassName:@"Item"];
-//    [query whereKey:@"Title" equalTo:@"Brookings"];
-//    NSArray * objects = [query findObjects];
-//    
-//            
-//            // The find succeeded.
-//            NSLog(@"Successfully retrieved %lu objects.", (unsigned long)objects.count);
-//            // Do something with the found objects
-//            for (PFObject *object in objects) {
-//                item = object;
-//            }
-//            
-//            NSData *imageData = UIImagePNGRepresentation([UIImage imageNamed:@"Whispers-hero.jpg"]);
-//            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
-//            item[@"MainPhoto"] = imageFile;
-//            [item saveInBackground];
     
     
-            PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
-            [query2 whereKey:@"item" equalTo:item];
-            comments = [query2 findObjects];
-
-
-	// Do any additional setup after loading the view.
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
+    [query2 whereKey:@"item" equalTo:item];
+    comments = [query2 findObjects];
+    
+    
+    PFQuery *favQuery = [PFUser query];
+    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
+    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            NSMutableArray * faves = (NSMutableArray *)object[@"Favorites"];
+            NSLog(@"%d", faves.count);
+            NSLog(@"%@", faves);
+            if (faves != nil && [faves containsObject:item]) {
+                NSLog(@"changing pic");
+                [addToFavs setImage:[UIImage imageNamed:@"starOn.png"]];
+            }
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)favesClicked:(id)sender {
+    PFQuery *favQuery = [PFUser query];
+    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
+    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            NSMutableArray * faves = object[@"Favorites"];
+            if (faves == nil) {
+                faves = [[NSMutableArray alloc] init];
+            }
+            [faves addObject:item];
+            object[@"Favorites"] = faves;
+            [object saveInBackground];
+        }
+    }];
+    
+   
 }
 
 @end
