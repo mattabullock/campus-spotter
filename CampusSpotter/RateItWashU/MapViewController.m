@@ -125,13 +125,24 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary *)change
-                       context:(void *)context {}
+                       context:(void *)context
+{
+    [MapViewController setLocation:mapView.myLocation];
+}
 
 - (IBAction)centerOnUser:(id)sender {
     CLLocation *location = mapView.myLocation;
     if (location) {
         [mapView animateToLocation:location.coordinate];
     }
+}
+
++ (void)setLocation:(CLLocation*) loc {
+    location = loc;
+}
+
++ (CLLocation*)getLocation {
+    return location;
 }
 
 /*

@@ -16,6 +16,8 @@
 
 @interface MapViewController : UIViewController <GMSMapViewDelegate, UpdateListener>
 
++(CLLocation*)getLocation;
+
 @property NSMutableArray *markers;
 
 @property IBOutlet GMSMapView *mapView;
@@ -23,3 +25,5 @@
 @property InfoWindow *selectedInfoWindow;
 
 @end
+
+CLLocation* location;

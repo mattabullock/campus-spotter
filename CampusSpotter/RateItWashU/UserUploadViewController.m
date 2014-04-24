@@ -7,6 +7,7 @@
 //
 
 #import "UserUploadViewController.h"
+#import "MapViewController.h"
 
 @interface UserUploadViewController ()
 
@@ -97,7 +98,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 }
 
 - (IBAction)submit:(id)sender {
-    PFGeoPoint *geo = [PFGeoPoint geoPointWithLocation:self.locationManager.location];
+    PFGeoPoint *geo = [PFGeoPoint geoPointWithLocation:[MapViewController getLocation]];
     NSLog(@"%@", geo);
     NSLog(@"%@", self.name.text);
     NSLog(@"%@", self.category);
