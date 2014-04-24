@@ -40,6 +40,7 @@
 }
 
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -160,6 +161,11 @@
     [detail setCommentTitle: comment[@"commentTitle"]];
     [detail setRating: [comment[@"rating"] intValue]];
     [detail setImage: comment[@"image"]];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows]
+                          withRowAnimation:UITableViewRowAnimationNone];
 }
 
 

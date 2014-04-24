@@ -92,10 +92,10 @@
         }
     }
     
-    [pvc setViewControllers:pics direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+ //   [pvc setViewControllers:pics direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
-    pvc.view.frame = self.view.frame;
-    [self.view addSubview:pvc.view];
+ //   pvc.view.frame = self.view.frame;
+  //  [self.view addSubview:pvc.view];
 //    [self addChildViewController:pvc];
     
 }
@@ -109,5 +109,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self updateDisplay];
+}
 
 @end

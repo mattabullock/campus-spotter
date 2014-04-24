@@ -29,29 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",(NSString*)item[@"Title"]);
-    
-    
-    PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
-    [query2 whereKey:@"item" equalTo:item];
-    comments = [query2 findObjects];
-    
-    
-    PFQuery *favQuery = [PFUser query];
-    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
-    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        if (!error) {
-            NSMutableArray * faves = (NSMutableArray *)object[@"Favorites"];
-            if (faves != nil) {
-                for (PFObject * obj in faves) {
-                    if ([[obj objectId] isEqualToString:[item objectId]]) {
-                        fave = true;
-                        [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
-                    }
-                }
-            }
-        }
-    }];
+    [self updateContent];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,8 +60,29 @@
             fave = !fave;
         }
     }];
+}
+
+- (void) updateContent {
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Comment"];
+    [query2 whereKey:@"item" equalTo:item];
+    comments = [query2 findObjects];
     
-   
+    
+    PFQuery *favQuery = [PFUser query];
+    [favQuery whereKey:@"username" equalTo:[[PFUser currentUser] username]];
+    [favQuery getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!error) {
+            NSMutableArray * faves = (NSMutableArray *)object[@"Favorites"];
+            if (faves != nil) {
+                for (PFObject * obj in faves) {
+                    if ([[obj objectId] isEqualToString:[item objectId]]) {
+                        fave = true;
+                        [addToFavs setImage:[UIImage imageNamed:@"starOn.png"] forState:UIControlStateNormal];
+                    }
+                }
+            }
+        }
+    }];
 }
 
 @end
