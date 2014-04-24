@@ -6,8 +6,15 @@
 //
 //
 
-#import "ViewController.h"
+#import "DetailTabBar.h"
+#import <UIKit/UIKit.h>
+#import "MainTabBarController.h"
+#import <Parse/Parse.h>
+#import "PFCell.h"
 
-@interface FavoritesViewController : UIViewController
+@interface FavoritesViewController : UITableViewController <UpdateListener>
+
+@property PFCell *clickedCell;
+@property NSMutableArray *favorites;
 
 @end
