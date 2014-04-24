@@ -18,6 +18,8 @@
     [GMSServices provideAPIKey:@"AIzaSyAWdu9tpX23FSBRSLY7KQxSxgYFQfMUNw4"];
     [[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UITableViewCell appearance] setBackgroundColor:[UIColor colorWithRed:137/255.0f green:137/255.0f blue:137/255.0f alpha:1.0f]];
+    
     return YES;
 }
 							

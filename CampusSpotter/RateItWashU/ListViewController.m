@@ -69,7 +69,6 @@
     static NSString *CellIdentifier = @"Cell";
     
     PFCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    cell.contentView.backgroundColor = [UIColor colorWithRed:219/255.0f green:219/255.0f blue:219/255.0f alpha:1.0f];
     
     if (cell == nil) {
         
